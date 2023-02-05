@@ -1,7 +1,7 @@
 
 import os
 from github import Github
-TOKEN='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'
+TOKEN=''
 
 # Initialize a Github instance with your API token
 g = Github(TOKEN)
