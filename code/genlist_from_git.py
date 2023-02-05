@@ -9,7 +9,7 @@ g = Github(TOKEN)
 # Get the authenticated user
 user = g.get_user()
 
-repo = g.get_repo("kplr-training/Jekyll")
+repo = g.get_repo("kplr-training/kplr-training.github.io")
 
 def list_files(repo, path='',indent=0):
     html = ""
@@ -32,7 +32,7 @@ def list_files(repo, path='',indent=0):
 html = list_files(repo, 'notebooks')
 
 # the generated list.html files is included in the jekyll site and referenced in the index.html file
-list_file = './_includes_/list.html'
+list_file = './_includes/list.html'
 os.makedirs(os.path.dirname(list_file), exist_ok=True)
 with open(list_file, 'w') as f:
     f.write('<br>'+html)
