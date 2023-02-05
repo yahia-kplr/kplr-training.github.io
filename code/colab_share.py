@@ -92,14 +92,14 @@ def all_job(repo, path):
 def main():
     #load_dotenv()
 
-    g = Github('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')
+    g = Github('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')
     user = g.get_user()
 
     repos = [i.full_name for i in g.get_user().get_repos() if i.full_name.startswith('kplr-training')]
     
-    for repo in repos:        
-        repo = g.get_repo(repo)           
-        all_job(repo, "")
+    #for repo in repos:        
+    repo = g.get_repo('kplr-training/Fondamentaux-Python')
+    all_job(repo, "")
 
 
 if __name__ == "__main__":
