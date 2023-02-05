@@ -30,9 +30,9 @@ def list_files(repo, path='',indent=0):
             
 
 html = list_files(repo, 'notebooks')
-
+html = html[:5] + '<li></li>\n' + html[5:]
 # the generated list.html files is included in the jekyll site and referenced in the index.html file
 list_file = './_includes/list.html'
 os.makedirs(os.path.dirname(list_file), exist_ok=True)
 with open(list_file, 'w') as f:
-    f.write('<br>'+html)
+    f.write(html)
