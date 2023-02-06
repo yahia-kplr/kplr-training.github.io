@@ -8,7 +8,7 @@ files = []
 # r=root, d=directories, f = files
 for r, d, f in os.walk(ALL_REPOS_PATH):
     for file in f:
-        if file.endswith('Arbre_de_décision.ipynb'):
+        if file.endswith('.ipynb'):
             files.append(os.path.join(r, file))
 
 # iterate over pynb files and convert to html into github pages local repo
