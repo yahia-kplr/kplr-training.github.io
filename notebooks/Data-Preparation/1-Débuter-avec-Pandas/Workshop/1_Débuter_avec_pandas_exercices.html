@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>04-Lesson-Program_Flow</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>1_Débuter_avec_pandas_exercices</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14596,7 +14596,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/kplr-training/Fondamentaux-Python/blob/main/Days_02/Projets/Exercises/04-Lesson-Program_Flow.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/kplr-training/Data-Preparation/blob/main/1-D%C3%A9buter-avec-Pandas/Workshop/1_D%C3%A9buter_avec_pandas_exercices.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14608,27 +14608,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a 
- href="https://colab.research.google.com/github/LearnPythonWithRune/LearnPython/blob/main/colab/starter/03 - Lesson - Program Flow.ipynb"
- target="_parent">
-<img 
- src="https://colab.research.google.com/assets/colab-badge.svg"
-alt="Open In Colab"/></p>
-</a>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Program-Flow">Program Flow<a class="anchor-link" href="#Program-Flow">&#182;</a></h1><h3 id="Goal">Goal<a class="anchor-link" href="#Goal">&#182;</a></h3><ul>
-<li>To learn about if-statements</li>
-<li>Use if-statements to make a program perform based on variables</li>
+<h1 id="D%C3%A9buter-avec-pandas"><strong>D&#233;buter avec pandas</strong><a class="anchor-link" href="#D%C3%A9buter-avec-pandas">&#182;</a></h1><ul>
+<li>Nous commencerons par présenter les classes Series, DataFrame et Index, qui sont les éléments de base de la bibliothèque pandas, et montrerons comment les utiliser.</li>
+<li>À la fin de cette section, vous serez en mesure de créer des DataFrames et d'y effectuer des opérations pour inspecter et filtrer les données.</li>
 </ul>
 
 </div>
@@ -14641,13 +14623,470 @@ alt="Open In Colab"/></p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Boolean-expression">Boolean expression<a class="anchor-link" href="#Boolean-expression">&#182;</a></h3><ul>
-<li>Equals: a == b</li>
-<li>Not Equals: a != b</li>
-<li>Less than: a &lt; b</li>
-<li>Less than or equal to: a &lt;= b</li>
-<li>Greater than: a &gt; b</li>
-<li>Greater than or equal to: a &gt;= b</li>
+<h1 id="Anatomy-of-a-DataFrame"><strong>Anatomy of a DataFrame</strong><a class="anchor-link" href="#Anatomy-of-a-DataFrame">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="data:image/png;base64,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" alt="image.png" /></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Un DataFrame est composé d'une ou plusieurs Series. Les noms des séries forment les noms des colonnes et les étiquettes des lignes forment l'index.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">meteorites</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/Meteorite_Landings.csv&#39;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">meteorites</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+  <div id="df-869e414c-a479-4bb8-a9e2-e7e457fe92c4">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>id</th>
+      <th>nametype</th>
+      <th>recclass</th>
+      <th>mass (g)</th>
+      <th>fall</th>
+      <th>year</th>
+      <th>reclat</th>
+      <th>reclong</th>
+      <th>GeoLocation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aachen</td>
+      <td>1</td>
+      <td>Valid</td>
+      <td>L5</td>
+      <td>21</td>
+      <td>Fell</td>
+      <td>01/01/1880 12:00:00 AM</td>
+      <td>50.77500</td>
+      <td>6.08333</td>
+      <td>(50.775, 6.08333)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Aarhus</td>
+      <td>2</td>
+      <td>Valid</td>
+      <td>H6</td>
+      <td>720</td>
+      <td>Fell</td>
+      <td>01/01/1951 12:00:00 AM</td>
+      <td>56.18333</td>
+      <td>10.23333</td>
+      <td>(56.18333, 10.23333)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Abee</td>
+      <td>6</td>
+      <td>Valid</td>
+      <td>EH4</td>
+      <td>107000</td>
+      <td>Fell</td>
+      <td>01/01/1952 12:00:00 AM</td>
+      <td>54.21667</td>
+      <td>-113.00000</td>
+      <td>(54.21667, -113.0)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Acapulco</td>
+      <td>10</td>
+      <td>Valid</td>
+      <td>Acapulcoite</td>
+      <td>1914</td>
+      <td>Fell</td>
+      <td>01/01/1976 12:00:00 AM</td>
+      <td>16.88333</td>
+      <td>-99.90000</td>
+      <td>(16.88333, -99.9)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Achiras</td>
+      <td>370</td>
+      <td>Valid</td>
+      <td>L6</td>
+      <td>780</td>
+      <td>Fell</td>
+      <td>01/01/1902 12:00:00 AM</td>
+      <td>-33.16667</td>
+      <td>-64.95000</td>
+      <td>(-33.16667, -64.95)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-869e414c-a479-4bb8-a9e2-e7e457fe92c4')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-869e414c-a479-4bb8-a9e2-e7e457fe92c4 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-869e414c-a479-4bb8-a9e2-e7e457fe92c4');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Series</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0      Aachen
+1      Aarhus
+2        Abee
+3    Acapulco
+4     Achiras
+Name: name, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Columns:</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Index([&#39;name&#39;, &#39;id&#39;, &#39;nametype&#39;, &#39;recclass&#39;, &#39;mass (g)&#39;, &#39;fall&#39;, &#39;year&#39;,
+       &#39;reclat&#39;, &#39;reclong&#39;, &#39;GeoLocation&#39;],
+      dtype=&#39;object&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Index:</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>RangeIndex(start=0, stop=5, step=1)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Creating DataFrames</strong></p>
+<ul>
+<li>We can create DataFrames from a variety of sources such as other Python objects, flat files, webscraping, and API requests.</li>
+<li>Here, we will see just a couple of examples, but be sure to check out this page in the documentation for a complete list.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Using a flat file</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">meteorites</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/Meteorite_Landings.csv&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Using data from an API</strong></p>
+<ul>
+<li>Collect the data from NASA's Open Data Portal using the Socrata Open Data API (SODA) with the requests library:</li>
 </ul>
 
 </div>
@@ -14661,7 +15100,18 @@ alt="Open In Colab"/></p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;https://data.nasa.gov/resource/gh4g-9sfh.json&#39;</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;$limit&#39;</span><span class="p">:</span> <span class="mi">50_000</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Request was not successful and returned code: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 
      </div>
@@ -14669,6 +15119,926 @@ alt="Open In Colab"/></p>
 </div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+  <div id="df-0c997dd0-de3c-4ff1-bf48-92328dd2b771">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>id</th>
+      <th>nametype</th>
+      <th>recclass</th>
+      <th>mass</th>
+      <th>fall</th>
+      <th>year</th>
+      <th>reclat</th>
+      <th>reclong</th>
+      <th>geolocation</th>
+      <th>:@computed_region_cbhk_fwbd</th>
+      <th>:@computed_region_nnqa_25f4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aachen</td>
+      <td>1</td>
+      <td>Valid</td>
+      <td>L5</td>
+      <td>21</td>
+      <td>Fell</td>
+      <td>1880-01-01T00:00:00.000</td>
+      <td>50.775000</td>
+      <td>6.083330</td>
+      <td>{'latitude': '50.775', 'longitude': '6.08333'}</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Aarhus</td>
+      <td>2</td>
+      <td>Valid</td>
+      <td>H6</td>
+      <td>720</td>
+      <td>Fell</td>
+      <td>1951-01-01T00:00:00.000</td>
+      <td>56.183330</td>
+      <td>10.233330</td>
+      <td>{'latitude': '56.18333', 'longitude': '10.23333'}</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Abee</td>
+      <td>6</td>
+      <td>Valid</td>
+      <td>EH4</td>
+      <td>107000</td>
+      <td>Fell</td>
+      <td>1952-01-01T00:00:00.000</td>
+      <td>54.216670</td>
+      <td>-113.000000</td>
+      <td>{'latitude': '54.21667', 'longitude': '-113.0'}</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-0c997dd0-de3c-4ff1-bf48-92328dd2b771')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-0c997dd0-de3c-4ff1-bf48-92328dd2b771 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-0c997dd0-de3c-4ff1-bf48-92328dd2b771');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Inspecting the data</strong></p>
+<ul>
+<li><p>Now that we have some data, we need to perform an initial inspection of it.</p>
+</li>
+<li><p>This gives us information on what the data looks like, how many rows/columns there are, and how much data we have.</p>
+</li>
+<li><p>Let's inspect the meteorites data.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>How many rows and columns are there?</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(45716, 10)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>What are the column names?</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Index([&#39;name&#39;, &#39;id&#39;, &#39;nametype&#39;, &#39;recclass&#39;, &#39;mass (g)&#39;, &#39;fall&#39;, &#39;year&#39;,
+       &#39;reclat&#39;, &#39;reclong&#39;, &#39;GeoLocation&#39;],
+      dtype=&#39;object&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>What type of data does each column currently hold?</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>name            object
+id               int64
+nametype        object
+recclass        object
+mass (g)       float64
+fall            object
+year            object
+reclat         float64
+reclong        float64
+GeoLocation     object
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>What does the data look like?</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+  <div id="df-eabfb664-86a6-49fa-ae31-74b94d7f2b10">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>id</th>
+      <th>nametype</th>
+      <th>recclass</th>
+      <th>mass (g)</th>
+      <th>fall</th>
+      <th>year</th>
+      <th>reclat</th>
+      <th>reclong</th>
+      <th>GeoLocation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aachen</td>
+      <td>1</td>
+      <td>Valid</td>
+      <td>L5</td>
+      <td>21.0</td>
+      <td>Fell</td>
+      <td>01/01/1880 12:00:00 AM</td>
+      <td>50.77500</td>
+      <td>6.08333</td>
+      <td>(50.775, 6.08333)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Aarhus</td>
+      <td>2</td>
+      <td>Valid</td>
+      <td>H6</td>
+      <td>720.0</td>
+      <td>Fell</td>
+      <td>01/01/1951 12:00:00 AM</td>
+      <td>56.18333</td>
+      <td>10.23333</td>
+      <td>(56.18333, 10.23333)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Abee</td>
+      <td>6</td>
+      <td>Valid</td>
+      <td>EH4</td>
+      <td>107000.0</td>
+      <td>Fell</td>
+      <td>01/01/1952 12:00:00 AM</td>
+      <td>54.21667</td>
+      <td>-113.00000</td>
+      <td>(54.21667, -113.0)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Acapulco</td>
+      <td>10</td>
+      <td>Valid</td>
+      <td>Acapulcoite</td>
+      <td>1914.0</td>
+      <td>Fell</td>
+      <td>01/01/1976 12:00:00 AM</td>
+      <td>16.88333</td>
+      <td>-99.90000</td>
+      <td>(16.88333, -99.9)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Achiras</td>
+      <td>370</td>
+      <td>Valid</td>
+      <td>L6</td>
+      <td>780.0</td>
+      <td>Fell</td>
+      <td>01/01/1902 12:00:00 AM</td>
+      <td>-33.16667</td>
+      <td>-64.95000</td>
+      <td>(-33.16667, -64.95)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-eabfb664-86a6-49fa-ae31-74b94d7f2b10')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-eabfb664-86a6-49fa-ae31-74b94d7f2b10 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-eabfb664-86a6-49fa-ae31-74b94d7f2b10');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Sometimes there may be extraneous data at the end of the file, so checking the bottom few rows is also important:</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+  <div id="df-2e0372d7-a83a-47f9-a4b7-845d66e899bb">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>id</th>
+      <th>nametype</th>
+      <th>recclass</th>
+      <th>mass (g)</th>
+      <th>fall</th>
+      <th>year</th>
+      <th>reclat</th>
+      <th>reclong</th>
+      <th>GeoLocation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>45711</th>
+      <td>Zillah 002</td>
+      <td>31356</td>
+      <td>Valid</td>
+      <td>Eucrite</td>
+      <td>172.0</td>
+      <td>Found</td>
+      <td>01/01/1990 12:00:00 AM</td>
+      <td>29.03700</td>
+      <td>17.01850</td>
+      <td>(29.037, 17.0185)</td>
+    </tr>
+    <tr>
+      <th>45712</th>
+      <td>Zinder</td>
+      <td>30409</td>
+      <td>Valid</td>
+      <td>Pallasite, ungrouped</td>
+      <td>46.0</td>
+      <td>Found</td>
+      <td>01/01/1999 12:00:00 AM</td>
+      <td>13.78333</td>
+      <td>8.96667</td>
+      <td>(13.78333, 8.96667)</td>
+    </tr>
+    <tr>
+      <th>45713</th>
+      <td>Zlin</td>
+      <td>30410</td>
+      <td>Valid</td>
+      <td>H4</td>
+      <td>3.3</td>
+      <td>Found</td>
+      <td>01/01/1939 12:00:00 AM</td>
+      <td>49.25000</td>
+      <td>17.66667</td>
+      <td>(49.25, 17.66667)</td>
+    </tr>
+    <tr>
+      <th>45714</th>
+      <td>Zubkovsky</td>
+      <td>31357</td>
+      <td>Valid</td>
+      <td>L6</td>
+      <td>2167.0</td>
+      <td>Found</td>
+      <td>01/01/2003 12:00:00 AM</td>
+      <td>49.78917</td>
+      <td>41.50460</td>
+      <td>(49.78917, 41.5046)</td>
+    </tr>
+    <tr>
+      <th>45715</th>
+      <td>Zulu Queen</td>
+      <td>30414</td>
+      <td>Valid</td>
+      <td>L3.7</td>
+      <td>200.0</td>
+      <td>Found</td>
+      <td>01/01/1976 12:00:00 AM</td>
+      <td>33.98333</td>
+      <td>-115.68333</td>
+      <td>(33.98333, -115.68333)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2e0372d7-a83a-47f9-a4b7-845d66e899bb')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-2e0372d7-a83a-47f9-a4b7-845d66e899bb button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-2e0372d7-a83a-47f9-a4b7-845d66e899bb');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Get some information about the DataFrame</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 45716 entries, 0 to 45715
+Data columns (total 10 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   name         45716 non-null  object 
+ 1   id           45716 non-null  int64  
+ 2   nametype     45716 non-null  object 
+ 3   recclass     45716 non-null  object 
+ 4   mass (g)     45585 non-null  float64
+ 5   fall         45716 non-null  object 
+ 6   year         45425 non-null  object 
+ 7   reclat       38401 non-null  float64
+ 8   reclong      38401 non-null  float64
+ 9   GeoLocation  38401 non-null  object 
+dtypes: float64(3), int64(1), object(6)
+memory usage: 3.5+ MB
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Exercise 1.1</strong></p>
+<ul>
+<li>Create a DataFrame by reading in the 2019_Yellow_Taxi_Trip_Data.csv file.</li>
+<li>Examine the first 5 rows.</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14677,7 +16047,7 @@ alt="Open In Colab"/></p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#solution</span>
 </pre></div>
 
      </div>
@@ -14685,6 +16055,21 @@ alt="Open In Colab"/></p>
 </div>
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Exercise 1.2</strong></p>
+<ul>
+<li>Find the dimensions (number of rows and number of columns) in the data.</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14693,7 +16078,7 @@ alt="Open In Colab"/></p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#solution</span>
 </pre></div>
 
      </div>
@@ -14701,6 +16086,918 @@ alt="Open In Colab"/></p>
 </div>
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Extracting-subsets"><strong>Extracting subsets</strong><a class="anchor-link" href="#Extracting-subsets">&#182;</a></h1><ul>
+<li>A crucial part of working with DataFrames is extracting subsets of the data: finding rows that meet a certain set of criteria, isolating columns/rows of interest, etc.</li>
+<li>After narrowing down our data, we are closer to discovering insights.</li>
+<li>This section will be the backbone of many analysis tasks.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Selecting columns</strong></p>
+<ul>
+<li>We can select columns as attributes if their names would be valid Python variables:</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="p">[[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;mass (g)&#39;</span><span class="p">]]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+  <div id="df-0e476791-fb5f-479f-b1f2-6fd18bd7b3c7">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>mass (g)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aachen</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Aarhus</td>
+      <td>720.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Abee</td>
+      <td>107000.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Acapulco</td>
+      <td>1914.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Achiras</td>
+      <td>780.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>45711</th>
+      <td>Zillah 002</td>
+      <td>172.0</td>
+    </tr>
+    <tr>
+      <th>45712</th>
+      <td>Zinder</td>
+      <td>46.0</td>
+    </tr>
+    <tr>
+      <th>45713</th>
+      <td>Zlin</td>
+      <td>3.3</td>
+    </tr>
+    <tr>
+      <th>45714</th>
+      <td>Zubkovsky</td>
+      <td>2167.0</td>
+    </tr>
+    <tr>
+      <th>45715</th>
+      <td>Zulu Queen</td>
+      <td>200.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>45716 rows × 2 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-0e476791-fb5f-479f-b1f2-6fd18bd7b3c7')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-0e476791-fb5f-479f-b1f2-6fd18bd7b3c7 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-0e476791-fb5f-479f-b1f2-6fd18bd7b3c7');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Selecting rows</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">104</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+  <div id="df-cb5b38ff-513f-4422-9757-2d653aeec794">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>id</th>
+      <th>nametype</th>
+      <th>recclass</th>
+      <th>mass (g)</th>
+      <th>fall</th>
+      <th>year</th>
+      <th>reclat</th>
+      <th>reclong</th>
+      <th>GeoLocation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>Benton</td>
+      <td>5026</td>
+      <td>Valid</td>
+      <td>LL6</td>
+      <td>2840.0</td>
+      <td>Fell</td>
+      <td>01/01/1949 12:00:00 AM</td>
+      <td>45.95000</td>
+      <td>-67.55000</td>
+      <td>(45.95, -67.55)</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>Berduc</td>
+      <td>48975</td>
+      <td>Valid</td>
+      <td>L6</td>
+      <td>270.0</td>
+      <td>Fell</td>
+      <td>01/01/2008 12:00:00 AM</td>
+      <td>-31.91000</td>
+      <td>-58.32833</td>
+      <td>(-31.91, -58.32833)</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>Béréba</td>
+      <td>5028</td>
+      <td>Valid</td>
+      <td>Eucrite-mmict</td>
+      <td>18000.0</td>
+      <td>Fell</td>
+      <td>01/01/1924 12:00:00 AM</td>
+      <td>11.65000</td>
+      <td>-3.65000</td>
+      <td>(11.65, -3.65)</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Berlanguillas</td>
+      <td>5029</td>
+      <td>Valid</td>
+      <td>L6</td>
+      <td>1440.0</td>
+      <td>Fell</td>
+      <td>01/01/1811 12:00:00 AM</td>
+      <td>41.68333</td>
+      <td>-3.80000</td>
+      <td>(41.68333, -3.8)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-cb5b38ff-513f-4422-9757-2d653aeec794')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-cb5b38ff-513f-4422-9757-2d653aeec794 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-cb5b38ff-513f-4422-9757-2d653aeec794');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Indexing</strong></p>
+<ul>
+<li>We use iloc[] to select rows and columns by their position:</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">104</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+  <div id="df-d5d015bd-143e-45ea-af6f-e813857762d5">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>recclass</th>
+      <th>mass (g)</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>Benton</td>
+      <td>LL6</td>
+      <td>2840.0</td>
+      <td>01/01/1949 12:00:00 AM</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>Berduc</td>
+      <td>L6</td>
+      <td>270.0</td>
+      <td>01/01/2008 12:00:00 AM</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>Béréba</td>
+      <td>Eucrite-mmict</td>
+      <td>18000.0</td>
+      <td>01/01/1924 12:00:00 AM</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Berlanguillas</td>
+      <td>L6</td>
+      <td>1440.0</td>
+      <td>01/01/1811 12:00:00 AM</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d5d015bd-143e-45ea-af6f-e813857762d5')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-d5d015bd-143e-45ea-af6f-e813857762d5 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-d5d015bd-143e-45ea-af6f-e813857762d5');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>We use loc[] to select by name:</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">104</span><span class="p">,</span> <span class="s1">&#39;mass (g)&#39;</span><span class="p">:</span><span class="s1">&#39;year&#39;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+  <div id="df-29d3aad4-7f1d-407f-90c3-4742957750c6">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mass (g)</th>
+      <th>fall</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>2840.0</td>
+      <td>Fell</td>
+      <td>01/01/1949 12:00:00 AM</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>270.0</td>
+      <td>Fell</td>
+      <td>01/01/2008 12:00:00 AM</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>18000.0</td>
+      <td>Fell</td>
+      <td>01/01/1924 12:00:00 AM</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>1440.0</td>
+      <td>Fell</td>
+      <td>01/01/1811 12:00:00 AM</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>960.0</td>
+      <td>Fell</td>
+      <td>01/01/2004 12:00:00 AM</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-29d3aad4-7f1d-407f-90c3-4742957750c6')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-29d3aad4-7f1d-407f-90c3-4742957750c6 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-29d3aad4-7f1d-407f-90c3-4742957750c6');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Filtering with Boolean masks</strong></p>
+<ul>
+<li><p>A Boolean mask is a array-like structure of Boolean values – it's a way to specify which rows/columns we want to select (True) and which we don't (False).</p>
+</li>
+<li><p>Here's an example of a Boolean mask for meteorites weighing more than 50 grams that were found on Earth (i.e., they were not observed falling):</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="p">(</span><span class="n">meteorites</span><span class="p">[</span><span class="s1">&#39;mass (g)&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">meteorites</span><span class="o">.</span><span class="n">fall</span> <span class="o">==</span> <span class="s1">&#39;Found&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0        False
+1        False
+2        False
+3        False
+4        False
+         ...  
+45711     True
+45712    False
+45713    False
+45714     True
+45715     True
+Length: 45716, dtype: bool</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>Important:</strong>Take note of the syntax here. We surround each condition with parentheses, and we use bitwise operators (&amp;, |, ~) instead of logical operators (and, or, not).</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Exercice 1.3 :</strong></p>
+<ul>
+<li>use a Boolean mask to select the subset of meteorites weighing more than 1 million grams (1,000 kilograms or roughly 2,205 pounds) that were observed falling.</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14709,7 +17006,7 @@ alt="Open In Colab"/></p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#solution</span>
 </pre></div>
 
      </div>
@@ -14717,7 +17014,21 @@ alt="Open In Colab"/></p>
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>An alternative to this is the query() method:</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14725,12 +17036,211 @@ alt="Open In Colab"/></p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-python"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;`mass (g)` &gt; 1e6 and fall == &#39;Fell&#39;&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+  <div id="df-4b46a3fd-8c92-45eb-b1d3-9e4effd55ab1">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>id</th>
+      <th>nametype</th>
+      <th>recclass</th>
+      <th>mass (g)</th>
+      <th>fall</th>
+      <th>year</th>
+      <th>reclat</th>
+      <th>reclong</th>
+      <th>GeoLocation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>29</th>
+      <td>Allende</td>
+      <td>2278</td>
+      <td>Valid</td>
+      <td>CV3</td>
+      <td>2000000.0</td>
+      <td>Fell</td>
+      <td>01/01/1969 12:00:00 AM</td>
+      <td>26.96667</td>
+      <td>-105.31667</td>
+      <td>(26.96667, -105.31667)</td>
+    </tr>
+    <tr>
+      <th>419</th>
+      <td>Jilin</td>
+      <td>12171</td>
+      <td>Valid</td>
+      <td>H5</td>
+      <td>4000000.0</td>
+      <td>Fell</td>
+      <td>01/01/1976 12:00:00 AM</td>
+      <td>44.05000</td>
+      <td>126.16667</td>
+      <td>(44.05, 126.16667)</td>
+    </tr>
+    <tr>
+      <th>506</th>
+      <td>Kunya-Urgench</td>
+      <td>12379</td>
+      <td>Valid</td>
+      <td>H5</td>
+      <td>1100000.0</td>
+      <td>Fell</td>
+      <td>01/01/1998 12:00:00 AM</td>
+      <td>42.25000</td>
+      <td>59.20000</td>
+      <td>(42.25, 59.2)</td>
+    </tr>
+    <tr>
+      <th>707</th>
+      <td>Norton County</td>
+      <td>17922</td>
+      <td>Valid</td>
+      <td>Aubrite</td>
+      <td>1100000.0</td>
+      <td>Fell</td>
+      <td>01/01/1948 12:00:00 AM</td>
+      <td>39.68333</td>
+      <td>-99.86667</td>
+      <td>(39.68333, -99.86667)</td>
+    </tr>
+    <tr>
+      <th>920</th>
+      <td>Sikhote-Alin</td>
+      <td>23593</td>
+      <td>Valid</td>
+      <td>Iron, IIAB</td>
+      <td>23000000.0</td>
+      <td>Fell</td>
+      <td>01/01/1947 12:00:00 AM</td>
+      <td>46.16000</td>
+      <td>134.65333</td>
+      <td>(46.16, 134.65333)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4b46a3fd-8c92-45eb-b1d3-9e4effd55ab1')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-4b46a3fd-8c92-45eb-b1d3-9e4effd55ab1 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-4b46a3fd-8c92-45eb-b1d3-9e4effd55ab1');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>

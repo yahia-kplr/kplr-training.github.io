@@ -27,10 +27,11 @@ def list_files(repo, path='',indent=0):
                 html += " " * indent + "<li><a href='" + file.path + "'>"+file.name+"</a></li>\n"
     html += " " * indent + "</ul>\n"
     return html
-            
 
 html = list_files(repo, 'notebooks')
-html = html[:5] + '<li></li>\n' + html[5:]
+
+# This in an ugly hack to insert a blank pixel in order to align the list to compensate a bug in LIQUID
+html = html[:5] + "<li><a href='https://upload.wikimedia.org/wikipedia/commons/d/d2/Blank.png'></a></li>\n" + html[5:]
 # the generated list.html files is included in the jekyll site and referenced in the index.html file
 list_file = './_includes/list.html'
 os.makedirs(os.path.dirname(list_file), exist_ok=True)
