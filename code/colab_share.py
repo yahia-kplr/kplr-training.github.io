@@ -57,6 +57,7 @@ def remove_colab(js_file):
             
 def make_dir_file_ipynb(lien_except):
     return [{"url":i,"path":'./'+"".join(i.replace('https://colab.research.google.com/github/kplr-training/','').split('blob/main/'))} for i in lien_except]
+
 def make_dir_file(lien_except):
     return [i.update({"file":'/'.join(i['path'].split('/')[:-1]),'ipynb':'./'+i['path'].split('/')[-1]}) for i in lien_except]
 
