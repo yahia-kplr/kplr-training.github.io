@@ -26,7 +26,7 @@ def add_link_colab(html_link):
         "colab_type": "text"
       },
       "source": [
-        "<a href=\""+html_link+"\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+        "<a href=\""+html_link+"\" target=\"_blank\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
       ]
     }
     return colab
@@ -39,7 +39,7 @@ def add_link_colab_local(html_link):
         "colab_type": "text"
       },
       "source": [
-        "<a href=\"https://colab.research.google.com/github/"+html_link+"\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+        "<a href=\"https://colab.research.google.com/github/"+html_link+"\" target=\"_blank\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
       ]
     }
     return colab    
