@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python/blob/main/Jour_02/Projets/Exercises/05-Project_Store-Empty.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python_fr/blob/main/Jour_02/Projets/Exercises/05-Project_Store-Empty.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14609,7 +14609,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Project-Store">Project Store<a class="anchor-link" href="#Project-Store">&#182;</a></h1><p>You will start to sell items from your awesome store with an interactive display.</p>
+<h1 id="Magasin-de-projets">Magasin de projets<a class="anchor-link" href="#Magasin-de-projets">&#182;</a></h1><p>Vous commencerez à vendre des articles de votre magasin génial avec un affichage interactif.</p>
 
 </div>
 </div>
@@ -14621,17 +14621,17 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Step-1:-Setup">Step 1: Setup<a class="anchor-link" href="#Step-1:-Setup">&#182;</a></h3><p>You count items sold and sell the three following items.</p>
+<h3 id="%C3%89tape%C2%A01%C2%A0:-Configuration">&#201;tape&#160;1&#160;: Configuration<a class="anchor-link" href="#%C3%89tape%C2%A01%C2%A0:-Configuration">&#182;</a></h3><p>Vous comptez les articles vendus et vendez les trois articles suivants.</p>
 <ol>
-<li><code>apple</code></li>
-<li><code>pear</code></li>
-<li><code>orange</code></li>
+<li>&quot;pomme&quot;</li>
+<li>&quot;poire&quot;</li>
+<li>&quot;Orange&quot;</li>
 </ol>
-<p>To keep track of how many items you sell, you can use a dictionary.</p>
-<p>The dictionary can use the items as keys, and the number of sold items as the value.</p>
-<div class="highlight"><pre><span></span><span class="n">sold_items</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<p>Pour garder une trace du nombre d'articles que vous vendez, vous pouvez utiliser un dictionnaire.</p>
+<p>Le dictionnaire peut utiliser les articles comme clés et le nombre d'articles vendus comme valeur.</p>
+<div class="highlight"><pre><span></span><span class="n">articles_vendus</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pomme&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 </pre></div>
-<p>Create a dictionary with all three items you sell.</p>
+<p>Créez un dictionnaire avec les trois articles que vous vendez.</p>
 
 </div>
 </div>
@@ -14691,11 +14691,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Step-2:-Customer-prompt">Step 2: Customer prompt<a class="anchor-link" href="#Step-2:-Customer-prompt">&#182;</a></h3><ul>
-<li>A customer should be asked what item to buy and how many.</li>
-<li>Then you should update the number of sold items in the dictionary <code>sold_items</code></li>
+<h3 id="%C3%89tape%C2%A02%C2%A0:-Invite-client">&#201;tape&#160;2&#160;: Invite client<a class="anchor-link" href="#%C3%89tape%C2%A02%C2%A0:-Invite-client">&#182;</a></h3><ul>
+<li>Un client devrait être demandé quel article acheter et combien.</li>
+<li>Ensuite, vous devez mettre à jour le nombre d'articles vendus dans le dictionnaire <code>sold_items</code></li>
 </ul>
-<p>If you write all the code in one cell, you can run it for each customer coming in the store.</p>
+<p>Si vous écrivez tout le code dans une cellule, vous pouvez l'exécuter pour chaque client entrant dans le magasin.</p>
 
 </div>
 </div>
@@ -14707,10 +14707,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="CLICK-FOR-HINT">CLICK FOR HINT<a class="anchor-link" href="#CLICK-FOR-HINT">&#182;</a></h4><!--
+<h4 id="CLIQUEZ-POUR-UN-CONSEIL">CLIQUEZ POUR UN CONSEIL<a class="anchor-link" href="#CLIQUEZ-POUR-UN-CONSEIL">&#182;</a></h4><!--
 
-To get customer input use built-in function input()
-Remember to convert the input to integers.
+Pour obtenir l'entrée du client, utilisez la fonction intégrée input()
+N'oubliez pas de convertir l'entrée en nombres entiers.
 
 -->
 
@@ -14772,9 +14772,9 @@ Remember to convert the input to integers.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Step-3:-Status">Step 3: Status<a class="anchor-link" href="#Step-3:-Status">&#182;</a></h3><ul>
-<li>Now you can print out how many of each items you have sold.</li>
-<li>Also, you can print the total number of items.</li>
+<h3 id="%C3%89tape%C2%A03%C2%A0:-%C3%89tat">&#201;tape&#160;3&#160;: &#201;tat<a class="anchor-link" href="#%C3%89tape%C2%A03%C2%A0:-%C3%89tat">&#182;</a></h3><ul>
+<li>Vous pouvez maintenant imprimer le nombre d'articles que vous avez vendus.</li>
+<li>En outre, vous pouvez imprimer le nombre total d'articles.</li>
 </ul>
 
 </div>

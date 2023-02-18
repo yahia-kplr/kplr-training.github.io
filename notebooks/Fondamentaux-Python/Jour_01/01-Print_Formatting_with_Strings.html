@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python/blob/main/Jour_01/01-Print_Formatting_with_Strings.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python_fr/blob/main/Jour_01/01-Print_Formatting_with_Strings.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14609,23 +14609,18 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="String-Formatting">String Formatting<a class="anchor-link" href="#String-Formatting">&#182;</a></h1><p>String formatting lets you inject items into a string rather than trying to chain items together using commas or string concatenation. As a quick comparison, consider:</p>
-<pre><code>player = 'Thomas'
-points = 33
-
-'Last night, '+player+' scored '+str(points)+' points.'  # concatenation
-
-f'Last night, {player} scored {points} points.'          # string formatting
-
-
-</code></pre>
-<p>There are three ways to perform string formatting.</p>
+<h1 id="Formatage-de-cha%C3%AEne">Formatage de cha&#238;ne<a class="anchor-link" href="#Formatage-de-cha%C3%AEne">&#182;</a></h1><p>Le formatage de chaîne vous permet d'injecter des éléments dans une chaîne plutôt que d'essayer d'enchaîner des éléments à l'aide de virgules ou d'une concaténation de chaînes. Pour une comparaison rapide, considérez:</p>
+<p>joueur = 'Thomas'
+points = 33</p>
+<p>'Hier soir, '+joueur+' a marqué '+str(points)+' points.' # concaténation</p>
+<p>f'La nuit dernière, {player} a marqué {points} points.' # formatage de chaîne</p>
+<p>Il existe trois façons d'effectuer le formatage des chaînes.</p>
 <ul>
-<li>The oldest method involves placeholders using the modulo <code>%</code> character.</li>
-<li>An improved technique uses the <code>.format()</code> string method.</li>
-<li>The newest method, introduced with Python 3.6, uses formatted string literals, called <em>f-strings</em>.</li>
+<li>La méthode la plus ancienne implique des espaces réservés utilisant le caractère modulo <code>%</code>.</li>
+<li>Une technique améliorée utilise la méthode de chaîne <code>.format()</code>.</li>
+<li>La méthode la plus récente, introduite avec Python 3.6, utilise des littéraux de chaîne formatés, appelés <em>f-strings</em>.</li>
 </ul>
-<p>Since you will likely encounter all three versions in someone else's code, we describe each of them here.</p>
+<p>Puisque vous rencontrerez probablement les trois versions dans le code de quelqu'un d'autre, nous décrivons chacune d'elles ici.</p>
 
 </div>
 </div>
@@ -14637,7 +14632,7 @@ f'Last night, {player} scored {points} points.'          # string formatting
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Formatting-with-placeholders">Formatting with placeholders<a class="anchor-link" href="#Formatting-with-placeholders">&#182;</a></h2><p>You can use <code>%s</code> to inject strings into your print statements. The modulo <code>%</code> is referred to as a &quot;string formatting operator&quot;.</p>
+<h2 id="Formatage-avec-des-espaces-r%C3%A9serv%C3%A9s">Formatage avec des espaces r&#233;serv&#233;s<a class="anchor-link" href="#Formatage-avec-des-espaces-r%C3%A9serv%C3%A9s">&#182;</a></h2><p>Vous pouvez utiliser <code>%s</code> pour injecter des chaînes dans vos instructions d'impression. Le modulo <code>%</code> est appelé &quot;opérateur de formatage de chaîne&quot;.</p>
 
 </div>
 </div>
@@ -14686,7 +14681,7 @@ f'Last night, {player} scored {points} points.'          # string formatting
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You can pass multiple items by placing them inside a tuple after the <code>%</code> operator.</p>
+<p>Vous pouvez passer plusieurs éléments en les plaçant dans un tuple après l'opérateur <code>%</code>.</p>
 
 </div>
 </div>
@@ -14735,7 +14730,7 @@ f'Last night, {player} scored {points} points.'          # string formatting
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You can also pass variable names:</p>
+<p>Vous pouvez également transmettre des noms de variables :</p>
 
 </div>
 </div>
@@ -14785,7 +14780,7 @@ f'Last night, {player} scored {points} points.'          # string formatting
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Format-conversion-methods.">Format conversion methods.<a class="anchor-link" href="#Format-conversion-methods.">&#182;</a></h3><p>It should be noted that two methods <code>%s</code> and <code>%r</code> convert any python object to a string using two separate methods: <code>str()</code> and <code>repr()</code>. We will learn more about these functions later on in the course, but you should note that <code>%r</code> and <code>repr()</code> deliver the <em>string representation</em> of the object, including quotation marks and any escape characters.</p>
+<h3 id="M%C3%A9thodes-de-conversion-de-format.">M&#233;thodes de conversion de format.<a class="anchor-link" href="#M%C3%A9thodes-de-conversion-de-format.">&#182;</a></h3><p>Il convient de noter que deux méthodes <code>%s</code> et <code>%r</code> convertissent tout objet python en une chaîne en utilisant deux méthodes distinctes : <code>str()</code> et <code>repr()</code>. Nous en apprendrons plus sur ces fonctions plus tard dans le cours, mais vous devez noter que <code>%r</code> et <code>repr()</code> fournissent la <em>représentation sous forme de chaîne</em> de l'objet, y compris les guillemets et tous les caractères d'échappement.</p>
 
 </div>
 </div>
@@ -14836,7 +14831,7 @@ He said his name was &#39;Fred&#39;.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>As another example, <code>\t</code> inserts a tab into a string.</p>
+<p>Comme autre exemple, <code>\t</code> insère une tabulation dans une chaîne.</p>
 
 </div>
 </div>
@@ -14887,7 +14882,7 @@ I once caught a fish &#39;this \tbig&#39;.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The <code>%s</code> operator converts whatever it sees into a string, including integers and floats. The <code>%d</code> operator converts numbers to integers first, without rounding. Note the difference below:</p>
+<p>L'opérateur <code>%s</code> convertit tout ce qu'il voit en une chaîne, y compris les entiers et les flottants. L'opérateur <code>%d</code> convertit d'abord les nombres en nombres entiers, sans arrondi. Notez la différence ci-dessous :</p>
 
 </div>
 </div>
@@ -14938,7 +14933,7 @@ I wrote 3 programs today.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Padding-and-Precision-of-Floating-Point-Numbers">Padding and Precision of Floating Point Numbers<a class="anchor-link" href="#Padding-and-Precision-of-Floating-Point-Numbers">&#182;</a></h3><p>Floating point numbers use the format <code>%5.2f</code>. Here, <code>5</code> would be the minimum number of characters the string should contain; these may be padded with whitespace if the entire number does not have this many digits. Next to this, <code>.2f</code> stands for how many numbers to show past the decimal point. Let's see some examples:</p>
+<h3 id="Remplissage-et-pr%C3%A9cision-des-nombres-%C3%A0-virgule-flottante">Remplissage et pr&#233;cision des nombres &#224; virgule flottante<a class="anchor-link" href="#Remplissage-et-pr%C3%A9cision-des-nombres-%C3%A0-virgule-flottante">&#182;</a></h3><p>Les nombres à virgule flottante utilisent le format <code>%5.2f</code>. Ici, <code>5</code> serait le nombre minimum de caractères que la chaîne devrait contenir ; ceux-ci peuvent être complétés par des espaces blancs si le nombre entier n'a pas autant de chiffres. À côté de cela, <code>.2f</code> représente le nombre de nombres à afficher après la virgule. Voyons quelques exemples :</p>
 
 </div>
 </div>
@@ -15135,7 +15130,7 @@ I wrote 3 programs today.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For more information on string formatting with placeholders visit <a href="https://docs.python.org/3/library/stdtypes.html#old-string-formatting">https://docs.python.org/3/library/stdtypes.html#old-string-formatting</a></p>
+<p>Pour plus d'informations sur le formatage des chaînes avec des espaces réservés, visitez <a href="https://docs.python.org/3/library/stdtypes.html#old-string-formatting">https://docs.python.org/3/library/stdtypes.html#old-string-formatting</a></p>
 
 </div>
 </div>
@@ -15147,7 +15142,7 @@ I wrote 3 programs today.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Multiple-Formatting">Multiple Formatting<a class="anchor-link" href="#Multiple-Formatting">&#182;</a></h3><p>Nothing prohibits using more than one conversion tool in the same print statement:</p>
+<h3 id="Formatage-multiple">Formatage multiple<a class="anchor-link" href="#Formatage-multiple">&#182;</a></h3><p>Rien n'interdit d'utiliser plus d'un outil de conversion dans la même instruction print :</p>
 
 </div>
 </div>
@@ -15196,11 +15191,9 @@ I wrote 3 programs today.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Formatting-with-the-.format()-method">Formatting with the <code>.format()</code> method<a class="anchor-link" href="#Formatting-with-the-.format()-method">&#182;</a></h2><p>A better way to format objects into your strings for print statements is with the string <code>.format()</code> method. The syntax is:</p>
-<pre><code>'String here {} then also {}'.format('something1','something2')
-
-</code></pre>
-<p>For example:</p>
+<h2 id="Formatage-avec-la-m%C3%A9thode-.format()">Formatage avec la m&#233;thode <code>.format()</code><a class="anchor-link" href="#Formatage-avec-la-m%C3%A9thode-.format()">&#182;</a></h2><p>Une meilleure façon de formater des objets dans vos chaînes pour les instructions d'impression consiste à utiliser la méthode de chaîne <code>.format()</code>. La syntaxe est :</p>
+<p>'Chaîne ici {} puis aussi {}'.format('something1','something2')</p>
+<p>Par exemple:</p>
 
 </div>
 </div>
@@ -15249,7 +15242,7 @@ I wrote 3 programs today.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="The-.format()-method-has-several-advantages-over-the-%25s-placeholder-method:">The .format() method has several advantages over the %s placeholder method:<a class="anchor-link" href="#The-.format()-method-has-several-advantages-over-the-%25s-placeholder-method:">&#182;</a></h3>
+<h3 id="La-m%C3%A9thode-.format()-pr%C3%A9sente-plusieurs-avantages-par-rapport-%C3%A0-la-m%C3%A9thode-d'espace-r%C3%A9serv%C3%A9-%25s%C2%A0:">La m&#233;thode .format() pr&#233;sente plusieurs avantages par rapport &#224; la m&#233;thode d'espace r&#233;serv&#233; %s&#160;:<a class="anchor-link" href="#La-m%C3%A9thode-.format()-pr%C3%A9sente-plusieurs-avantages-par-rapport-%C3%A0-la-m%C3%A9thode-d'espace-r%C3%A9serv%C3%A9-%25s%C2%A0:">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15260,7 +15253,7 @@ I wrote 3 programs today.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="1.-Inserted-objects-can-be-called-by-index-position:">1. Inserted objects can be called by index position:<a class="anchor-link" href="#1.-Inserted-objects-can-be-called-by-index-position:">&#182;</a></h4>
+<h4 id="1.-Les-objets-ins%C3%A9r%C3%A9s-peuvent-%C3%AAtre-appel%C3%A9s-par-position-d'index%C2%A0:">1. Les objets ins&#233;r&#233;s peuvent &#234;tre appel&#233;s par position d'index&#160;:<a class="anchor-link" href="#1.-Les-objets-ins%C3%A9r%C3%A9s-peuvent-%C3%AAtre-appel%C3%A9s-par-position-d'index%C2%A0:">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15308,7 +15301,7 @@ I wrote 3 programs today.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="2.-Inserted-objects-can-be-assigned-keywords:">2. Inserted objects can be assigned keywords:<a class="anchor-link" href="#2.-Inserted-objects-can-be-assigned-keywords:">&#182;</a></h4>
+<h4 id="2.-Les-objets-ins%C3%A9r%C3%A9s-peuvent-se-voir-attribuer-des-mots-cl%C3%A9s%C2%A0:">2. Les objets ins&#233;r&#233;s peuvent se voir attribuer des mots-cl&#233;s&#160;:<a class="anchor-link" href="#2.-Les-objets-ins%C3%A9r%C3%A9s-peuvent-se-voir-attribuer-des-mots-cl%C3%A9s%C2%A0:">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15356,7 +15349,7 @@ I wrote 3 programs today.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="3.-Inserted-objects-can-be-reused,-avoiding-duplication:">3. Inserted objects can be reused, avoiding duplication:<a class="anchor-link" href="#3.-Inserted-objects-can-be-reused,-avoiding-duplication:">&#182;</a></h4>
+<h4 id="3.-Les-objets-ins%C3%A9r%C3%A9s-peuvent-%C3%AAtre-r%C3%A9utilis%C3%A9s,-%C3%A9vitant-la-duplication%C2%A0:">3. Les objets ins&#233;r&#233;s peuvent &#234;tre r&#233;utilis&#233;s, &#233;vitant la duplication&#160;:<a class="anchor-link" href="#3.-Les-objets-ins%C3%A9r%C3%A9s-peuvent-%C3%AAtre-r%C3%A9utilis%C3%A9s,-%C3%A9vitant-la-duplication%C2%A0:">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15407,7 +15400,7 @@ A penny saved is a penny earned.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Alignment,-padding-and-precision-with-.format()">Alignment, padding and precision with <code>.format()</code><a class="anchor-link" href="#Alignment,-padding-and-precision-with-.format()">&#182;</a></h3><p>Within the curly braces you can assign field lengths, left/right alignments, rounding parameters and more</p>
+<h3 id="Alignement,-remplissage-et-pr%C3%A9cision-avec-.format()">Alignement, remplissage et pr&#233;cision avec <code>.format()</code><a class="anchor-link" href="#Alignement,-remplissage-et-pr%C3%A9cision-avec-.format()">&#182;</a></h3><p>Dans les accolades, vous pouvez attribuer des longueurs de champ, des alignements gauche/droite, des paramètres d'arrondi et plus encore</p>
 
 </div>
 </div>
@@ -15460,7 +15453,7 @@ Oranges  |        10
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>By default, <code>.format()</code> aligns text to the left, numbers to the right. You can pass an optional <code>&lt;</code>,<code>^</code>, or <code>&gt;</code> to set a left, center or right alignment:</p>
+<p>Par défaut, <code>.format()</code> aligne le texte à gauche, les nombres à droite. Vous pouvez passer un <code>&lt;</code>,<code>^</code> ou <code>&gt;</code> facultatif pour définir un alignement à gauche, au centre ou à droite :</p>
 
 </div>
 </div>
@@ -15511,7 +15504,7 @@ Oranges  |        10
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You can precede the aligment operator with a padding character</p>
+<p>Vous pouvez faire précéder l'opérateur d'alignement d'un caractère de remplissage</p>
 
 </div>
 </div>
@@ -15562,7 +15555,7 @@ Oranges  |        10
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Field widths and float precision are handled in a way similar to placeholders. The following two print statements are equivalent:</p>
+<p>Les largeurs de champ et la précision flottante sont gérées de la même manière que les espaces réservés. Les deux instructions d'impression suivantes sont équivalentes :</p>
 
 </div>
 </div>
@@ -15613,8 +15606,8 @@ This is my ten-character, two-decimal number:     13.58
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note that there are 5 spaces following the colon, and 5 characters taken up by 13.58, for a total of ten characters.</p>
-<p>For more information on the string <code>.format()</code> method visit <a href="https://docs.python.org/3/library/string.html#formatstrings">https://docs.python.org/3/library/string.html#formatstrings</a></p>
+<p>Notez qu'il y a 5 espaces après les deux-points, et 5 caractères occupés par 13,58, pour un total de dix caractères.</p>
+<p>Pour plus d'informations sur la méthode string <code>.format()</code>, visitez <a href="https://docs.python.org/3/library/string.html#formatstrings">https://docs.python.org/3/library/string.html#formatstrings</a></p>
 
 </div>
 </div>
@@ -15626,7 +15619,7 @@ This is my ten-character, two-decimal number:     13.58
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Formatted-String-Literals-(f-strings)">Formatted String Literals (f-strings)<a class="anchor-link" href="#Formatted-String-Literals-(f-strings)">&#182;</a></h2>
+<h2 id="Litt%C3%A9raux-de-cha%C3%AEne-format%C3%A9s-(cha%C3%AEnes-f)">Litt&#233;raux de cha&#238;ne format&#233;s (cha&#238;nes f)<a class="anchor-link" href="#Litt%C3%A9raux-de-cha%C3%AEne-format%C3%A9s-(cha%C3%AEnes-f)">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15637,7 +15630,7 @@ This is my ten-character, two-decimal number:     13.58
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Introduced in Python 3.6, f-strings offer several benefits over the older <code>.format()</code> string method described above. For one, you can bring outside variables immediately into to the string rather than pass them as arguments through <code>.format(var)</code>.</p>
+<p>Introduites dans Python 3.6, les f-strings offrent plusieurs avantages par rapport à l'ancienne méthode de chaîne <code>.format()</code> décrite ci-dessus. D'une part, vous pouvez introduire immédiatement des variables externes dans la chaîne plutôt que de les transmettre en tant qu'arguments via <code>.format(var)</code>.</p>
 
 </div>
 </div>
@@ -15688,7 +15681,7 @@ This is my ten-character, two-decimal number:     13.58
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Pass <code>!r</code> to get the string representation:</p>
+<p>Passez <code>!r</code> pour obtenir la représentation sous forme de chaîne :</p>
 
 </div>
 </div>
@@ -15737,7 +15730,7 @@ This is my ten-character, two-decimal number:     13.58
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Float-formatting-follows-%22result:-%7Bvalue:%7Bwidth%7D.%7Bprecision%7D%7D%22">Float formatting follows <code>"result: {value:{width}.{precision}}"</code><a class="anchor-link" href="#Float-formatting-follows-%22result:-%7Bvalue:%7Bwidth%7D.%7Bprecision%7D%7D%22">&#182;</a></h4>
+<h4 id="Le-formatage-flottant-suit-%22result%C2%A0:-%7Bvalue:%7Bwidth%7D.%7Bprecision%7D%7D%22">Le formatage flottant suit <code>"result&#160;: {value:{width}.{precision}}"</code><a class="anchor-link" href="#Le-formatage-flottant-suit-%22result%C2%A0:-%7Bvalue:%7Bwidth%7D.%7Bprecision%7D%7D%22">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15748,7 +15741,7 @@ This is my ten-character, two-decimal number:     13.58
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Where with the <code>.format()</code> method you might see <code>{value:10.4f}</code>, with f-strings this can become <code>{value:{10}.{6}}</code></p>
+<p>Là où avec la méthode <code>.format()</code> vous pourriez voir <code>{value:10.4f}</code>, avec les f-strings cela peut devenir <code>{value:{10}.{6}}</code></p>
 
 </div>
 </div>
@@ -15800,7 +15793,7 @@ My 10 character, four decimal number is:   23.4568
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note that with f-strings, <em>precision</em> refers to the total number of digits, not just those following the decimal. This fits more closely with scientific notation and statistical analysis. Unfortunately, f-strings do not pad to the right of the decimal, even if precision allows it:</p>
+<p>Notez qu'avec les f-strings, <em>précision</em> fait référence au nombre total de chiffres, pas seulement à ceux qui suivent la décimale. Cela correspond plus étroitement à la notation scientifique et à l'analyse statistique. Malheureusement, les f-strings ne remplissent pas à droite de la décimale, même si la précision le permet :</p>
 
 </div>
 </div>
@@ -15852,7 +15845,7 @@ My 10 character, four decimal number is:     23.45
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>If this becomes important, you can always use <code>.format()</code> method syntax inside an f-string:</p>
+<p>Si cela devient important, vous pouvez toujours utiliser la syntaxe de la méthode <code>.format()</code> dans une f-string :</p>
 
 </div>
 </div>
@@ -15904,7 +15897,7 @@ My 10 character, four decimal number is:   23.4500
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For more info on formatted string literals visit <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">https://docs.python.org/3/reference/lexical_analysis.html#f-strings</a></p>
+<p>Pour plus d'informations sur les littéraux de chaîne formatés, visitez <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">https://docs.python.org/3/reference/lexical_analysis.html#f-strings</a></p>
 
 </div>
 </div>

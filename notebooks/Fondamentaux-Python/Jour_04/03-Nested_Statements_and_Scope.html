@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python/blob/main/Jour_04/03-Nested_Statements_and_Scope.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python_fr/blob/main/Jour_04/03-Nested_Statements_and_Scope.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14609,8 +14609,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Nested-Statements-and-Scope">Nested Statements and Scope<a class="anchor-link" href="#Nested-Statements-and-Scope">&#182;</a></h1><p>Now that we have gone over writing our own functions, it's important to understand how Python deals with the variable names you assign. When you create a variable name in Python the name is stored in a <em>name-space</em>. Variable names also have a <em>scope</em>, the scope determines the visibility of that variable name to other parts of your code.</p>
-<p>Let's start with a quick thought experiment; imagine the following code:</p>
+<h1 id="D%C3%A9clarations-imbriqu%C3%A9es-et-port%C3%A9e">D&#233;clarations imbriqu&#233;es et port&#233;e<a class="anchor-link" href="#D%C3%A9clarations-imbriqu%C3%A9es-et-port%C3%A9e">&#182;</a></h1><p>Maintenant que nous avons fini d'écrire nos propres fonctions, il est important de comprendre comment Python gère les noms de variables que vous affectez. Lorsque vous créez un nom de variable en Python, le nom est stocké dans un * name-space <em>. Les noms de variable ont également une </em>portée*, la portée détermine la visibilité de ce nom de variable pour d'autres parties de votre code.</p>
+<p>Commençons par une expérience de pensée rapide ; imaginez le code suivant :</p>
 
 </div>
 </div>
@@ -14645,7 +14645,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>What do you imagine the output of printer() is? 25 or 50? What is the output of print x? 25 or 50?</p>
+<p>Que pensez-vous de la sortie de l'imprimante () ? 25 ou 50 ? Quelle est la sortie de print x ? 25 ou 50 ?</p>
 
 </div>
 </div>
@@ -14731,7 +14731,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Interesting! But how does Python know which <strong>x</strong> you're referring to in your code? This is where the idea of scope comes in. Python has a set of rules it follows to decide what variables (such as <strong>x</strong> in this case) you are referencing in your code. Lets break down the rules:</p>
+<p>Intéressant! Mais comment Python sait-il à quel <strong>x</strong> vous faites référence dans votre code ? C'est là qu'intervient l'idée de portée. Python a un ensemble de règles qu'il suit pour décider quelles variables (telles que <strong>x</strong> dans ce cas) vous référencez dans votre code. Découvrons les règles :</p>
 
 </div>
 </div>
@@ -14743,25 +14743,27 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This idea of scope in your code is very important to understand in order to properly assign and call variable names.</p>
-<p>In simple terms, the idea of scope can be described by 3 general rules:</p>
+<p>Cette idée de portée dans votre code est très importante à comprendre afin d'attribuer et d'appeler correctement les noms de variables.</p>
+<p>En termes simples, la notion de périmètre peut être décrite par 3 règles générales :</p>
 <ol>
-<li>Name assignments will create or change local names by default.</li>
-<li>Name references search (at most) four scopes, these are:<ul>
-<li>local</li>
-<li>enclosing functions</li>
-<li>global</li>
-<li>built-in</li>
-</ul>
-</li>
-<li>Names declared in global and nonlocal statements map assigned names to enclosing module and function scopes.</li>
+<li>Les attributions de noms créeront ou modifieront les noms locaux par défaut.</li>
+<li>Les références de nom recherchent (au plus) quatre étendues, à savoir :</li>
 </ol>
-<p>The statement in #2 above can be defined by the LEGB rule.</p>
-<p><strong>LEGB Rule:</strong></p>
-<p>L: Local — Names assigned in any way within a function (def or lambda), and not declared global in that function.</p>
-<p>E: Enclosing function locals — Names in the local scope of any and all enclosing functions (def or lambda), from inner to outer.</p>
-<p>G: Global (module) — Names assigned at the top-level of a module file, or declared global in a def within the file.</p>
-<p>B: Built-in (Python) — Names preassigned in the built-in names module : open, range, SyntaxError,...</p>
+<ul>
+<li>local</li>
+<li>fonctions englobantes</li>
+<li>mondial</li>
+<li>intégré</li>
+</ul>
+<ol start="3">
+<li>Les noms déclarés dans les instructions globales et non locales mappent les noms attribués aux étendues de module et de fonction englobantes.</li>
+</ol>
+<p>La déclaration au point 2 ci-dessus peut être définie par la règle LEGB.</p>
+<p><strong>Règle LEGB :</strong></p>
+<p>L : Local : noms attribués de quelque manière que ce soit dans une fonction (def ou lambda) et non déclarés globaux dans cette fonction.</p>
+<p>E : Locales des fonctions englobantes — Noms dans la portée locale de toutes les fonctions englobantes (def ou lambda), de l'intérieur vers l'extérieur.</p>
+<p>G : Global (module) — Noms assignés au niveau supérieur d'un fichier de module, ou déclarés globaux dans un def dans le fichier.</p>
+<p>B: Built-in (Python) — Noms préassignés dans le module de noms intégré : open, range, SyntaxError,...</p>
 
 </div>
 </div>
@@ -14773,7 +14775,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Quick-examples-of-LEGB">Quick examples of LEGB<a class="anchor-link" href="#Quick-examples-of-LEGB">&#182;</a></h2><h3 id="Local">Local<a class="anchor-link" href="#Local">&#182;</a></h3>
+<h2 id="Exemples-rapides-de-LEGB">Exemples rapides de LEGB<a class="anchor-link" href="#Exemples-rapides-de-LEGB">&#182;</a></h2><h3 id="Local">Local<a class="anchor-link" href="#Local">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14801,7 +14803,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Enclosing-function-locals">Enclosing function locals<a class="anchor-link" href="#Enclosing-function-locals">&#182;</a></h3><p>This occurs when we have a function inside a function (nested functions)</p>
+<h3 id="Englobant-les-param%C3%A8tres-locaux-de-la-fonction">Englobant les param&#232;tres locaux de la fonction<a class="anchor-link" href="#Englobant-les-param%C3%A8tres-locaux-de-la-fonction">&#182;</a></h3><p>Cela se produit lorsque nous avons une fonction à l'intérieur d'une fonction (fonctions imbriquées)</p>
 
 </div>
 </div>
@@ -14861,7 +14863,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note how Sammy was used, because the hello() function was enclosed inside of the greet function!</p>
+<p>Notez comment Sammy a été utilisé, car la fonction hello() était incluse dans la fonction greet !</p>
 
 </div>
 </div>
@@ -14873,7 +14875,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Global">Global<a class="anchor-link" href="#Global">&#182;</a></h3><p>Luckily in Jupyter a quick way to test for global variables is to see if another cell recognizes the variable!</p>
+<h3 id="Mondial">Mondial<a class="anchor-link" href="#Mondial">&#182;</a></h3><p>Heureusement, dans Jupyter, un moyen rapide de tester les variables globales est de voir si une autre cellule reconnaît la variable !</p>
 
 </div>
 </div>
@@ -14922,7 +14924,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Built-in">Built-in<a class="anchor-link" href="#Built-in">&#182;</a></h3><p>These are the built-in function names in Python (don't overwrite these!)</p>
+<h3 id="Int%C3%A9gr%C3%A9">Int&#233;gr&#233;<a class="anchor-link" href="#Int%C3%A9gr%C3%A9">&#182;</a></h3><p>Ce sont les noms de fonction intégrés dans Python (ne les écrasez pas !)</p>
 
 </div>
 </div>
@@ -14973,8 +14975,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Local-Variables">Local Variables<a class="anchor-link" href="#Local-Variables">&#182;</a></h2><p>When you declare variables inside a function definition, they are not related in any way to other variables with the same names used outside the function - i.e. variable names are local to the function. This is called the scope of the variable. All variables have the scope of the block they are declared in starting from the point of definition of the name.</p>
-<p>Example:</p>
+<h2 id="Variables-locales">Variables locales<a class="anchor-link" href="#Variables-locales">&#182;</a></h2><p>Lorsque vous déclarez des variables à l'intérieur d'une définition de fonction, elles ne sont en aucun cas liées à d'autres variables portant les mêmes noms utilisés en dehors de la fonction - c'est-à-dire que les noms de variables sont locaux à la fonction. C'est ce qu'on appelle la portée de la variable. Toutes les variables ont la portée du bloc dans lequel elles sont déclarées à partir du point de définition du nom.</p>
+<p>Exemple:</p>
 
 </div>
 </div>
@@ -15033,12 +15035,12 @@ x is still 50
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The first time that we print the value of the name <strong>x</strong> with the first line in the function’s body, Python uses the value of the parameter declared in the main block, above the function definition.</p>
-<p>Next, we assign the value 2 to <strong>x</strong>. The name <strong>x</strong> is local to our function. So, when we change the value of <strong>x</strong> in the function, the <strong>x</strong> defined in the main block remains unaffected.</p>
-<p>With the last print statement, we display the value of <strong>x</strong> as defined in the main block, thereby confirming that it is actually unaffected by the local assignment within the previously called function.</p>
-<h2 id="The-global-statement">The <code>global</code> statement<a class="anchor-link" href="#The-global-statement">&#182;</a></h2><p>If you want to assign a value to a name defined at the top level of the program (i.e. not inside any kind of scope such as functions or classes), then you have to tell Python that the name is not local, but it is global. We do this using the <code>global</code> statement. It is impossible to assign a value to a variable defined outside a function without the global statement.</p>
-<p>You can use the values of such variables defined outside the function (assuming there is no variable with the same name within the function). However, this is not encouraged and should be avoided since it becomes unclear to the reader of the program as to where that variable’s definition is. Using the <code>global</code> statement makes it amply clear that the variable is defined in an outermost block.</p>
-<p>Example:</p>
+<p>La première fois que nous imprimons la valeur du nom <strong>x</strong> avec la première ligne du corps de la fonction, Python utilise la valeur du paramètre déclaré dans le bloc principal, au-dessus de la définition de la fonction.</p>
+<p>Ensuite, nous attribuons la valeur 2 à <strong>x</strong>. Le nom <strong>x</strong> est local à notre fonction. Ainsi, lorsque nous modifions la valeur de <strong>x</strong> dans la fonction, le <strong>x</strong> défini dans le bloc principal reste inchangé.</p>
+<p>Avec la dernière instruction d'impression, nous affichons la valeur de <strong>x</strong> telle que définie dans le bloc principal, confirmant ainsi qu'elle n'est en fait pas affectée par l'affectation locale dans la fonction précédemment appelée.</p>
+<h2 id="L'instruction-globale">L'instruction <code>globale</code><a class="anchor-link" href="#L'instruction-globale">&#182;</a></h2><p>Si vous souhaitez attribuer une valeur à un nom défini au niveau supérieur du programme (c'est-à-dire pas à l'intérieur d'une portée telle que des fonctions ou des classes), vous devez indiquer à Python que le nom n'est pas local, mais global . Pour ce faire, nous utilisons l'instruction <code>global</code>. Il est impossible d'affecter une valeur à une variable définie en dehors d'une fonction sans l'instruction globale.</p>
+<p>Vous pouvez utiliser les valeurs de ces variables définies en dehors de la fonction (en supposant qu'il n'y ait pas de variable portant le même nom dans la fonction). Cependant, cela n'est pas encouragé et devrait être évité car il devient difficile pour le lecteur du programme de savoir où se trouve la définition de cette variable. L'utilisation de l'instruction <code>global</code> indique clairement que la variable est définie dans un bloc le plus externe.</p>
+<p>Exemple:</p>
 
 </div>
 </div>
@@ -15102,8 +15104,8 @@ Value of x (outside of func()) is:  2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The <code>global</code> statement is used to declare that <strong>x</strong> is a global variable - hence, when we assign a value to <strong>x</strong> inside the function, that change is reflected when we use the value of <strong>x</strong> in the main block.</p>
-<p>You can specify more than one global variable using the same global statement e.g. <code>global x, y, z</code>.</p>
+<p>L'instruction <code>global</code> est utilisée pour déclarer que <strong>x</strong> est une variable globale - par conséquent, lorsque nous attribuons une valeur à <strong>x</strong> dans la fonction, ce changement est reflété lorsque nous utilisons la valeur de <strong>x</strong> dans le bloc principal.</p>
+<p>Vous pouvez spécifier plusieurs variables globales à l'aide de la même instruction globale, par ex. <code>x, y, z globaux</code>.</p>
 
 </div>
 </div>
@@ -15115,8 +15117,8 @@ Value of x (outside of func()) is:  2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>You should now have a good understanding of Scope (you may have already intuitively felt right about Scope which is great!) One last mention is that you can use the <strong>globals()</strong> and <strong>locals()</strong> functions to check what are your current local and global variables.</p>
-<p>Another thing to keep in mind is that everything in Python is an object! I can assign variables to functions just like I can with numbers! We will go over this again in the decorator section of the course!</p>
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>Vous devriez maintenant avoir une bonne compréhension de Scope (vous avez peut-être déjà compris intuitivement Scope, ce qui est génial !) Une dernière mention est que vous pouvez utiliser les fonctions <strong>globals()</strong> et <strong>locals()</strong> pour vérifiez quelles sont vos variables locales et globales actuelles.</p>
+<p>Une autre chose à garder à l'esprit est que tout en Python est un objet ! Je peux assigner des variables à des fonctions comme je peux le faire avec des nombres ! Nous y reviendrons dans la partie décorateur du cours !</p>
 
 </div>
 </div>

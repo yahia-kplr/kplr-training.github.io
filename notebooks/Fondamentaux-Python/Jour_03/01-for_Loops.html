@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python/blob/main/Jour_03/01-for_Loops.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python_fr/blob/main/Jour_03/01-for_Loops.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14609,7 +14609,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Range">Range<a class="anchor-link" href="#Range">&#182;</a></h1>
+<h1 id="Gamme">Gamme<a class="anchor-link" href="#Gamme">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14620,8 +14620,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Sometimes, you might want to repeat a given operation many times. Repeated executions like this are performed by <b>loops</b>. We will look at two types of loops, <code>for</code> loops and <code>while</code> loops.</p>
-<p>Before we discuss loops lets discuss the <code>range</code> object. It is helpful to think of the range object as an ordered list. For now, let's look at the simplest case. If we would like to generate a sequence that contains three elements ordered from 0 to 2 we simply use the following command:</p>
+<p>Parfois, vous voudrez peut-être répéter une opération donnée plusieurs fois. Des exécutions répétées comme celle-ci sont effectuées par des <b>boucles</b>. Nous examinerons deux types de boucles, les boucles <code>for</code> et les boucles <code>while</code>.</p>
+<p>Avant de discuter des boucles, parlons de l'objet <code>range</code>. Il est utile de considérer l'objet range comme une liste ordonnée. Pour l'instant, regardons le cas le plus simple. Si nous souhaitons générer une séquence contenant trois éléments ordonnés de 0 à 2, nous utilisons simplement la commande suivante :</p>
 
 </div>
 </div>
@@ -14663,12 +14663,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="for-Loops">for Loops<a class="anchor-link" href="#for-Loops">&#182;</a></h1><p>A <code>for</code> loop acts as an iterator in Python; it goes through items that are in a <em>sequence</em> or any other iterable item. Objects that we've learned about that we can iterate over include strings, lists, tuples, and even built-in iterables for dictionaries, such as keys or values.</p>
-<p>We've already seen the <code>for</code> statement a little bit in past lectures but now let's formalize our understanding.</p>
-<p>Here's the general format for a <code>for</code> loop in Python:</p>
-<pre><code>for item in object:
-    statements to do stuff
-</code></pre>
+<h1 id="pour-les-boucles">pour les boucles<a class="anchor-link" href="#pour-les-boucles">&#182;</a></h1><p>Une boucle <code>for</code> agit comme un itérateur en Python ; il passe par les éléments qui sont dans une <em>séquence</em> ou tout autre élément itérable. Les objets que nous avons appris sur lesquels nous pouvons itérer incluent des chaînes, des listes, des tuples et même des itérables intégrés pour les dictionnaires, tels que des clés ou des valeurs.</p>
+<p>Nous avons déjà vu un peu l'instruction <code>for</code> dans les cours précédents, mais formalisons maintenant notre compréhension.</p>
+<p>Voici le format général d'une boucle <code>for</code> en Python :</p>
+<p>pour l'élément dans l'objet :
+déclarations pour faire des choses</p>
 
 </div>
 </div>
@@ -14680,7 +14679,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="What-is-for-loop?">What is for loop?<a class="anchor-link" href="#What-is-for-loop?">&#182;</a></h1>
+<h1 id="Qu'est-ce-que-la-boucle-for-?">Qu'est-ce que la boucle for ?<a class="anchor-link" href="#Qu'est-ce-que-la-boucle-for-?">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14691,8 +14690,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The <code>for</code> loop enables you to execute a code block multiple times. For example, you would use this if you would like to print out every element in a list.<br />
-Let's try to use a <code>for</code> loop to print all the years presented in the list <code>dates</code>:</p>
+<p>La boucle <code>for</code> vous permet d'exécuter plusieurs fois un bloc de code. Par exemple, vous l'utiliseriez si vous souhaitez imprimer chaque élément d'une liste.
+Essayons d'utiliser une boucle <code>for</code> pour imprimer toutes les années présentées dans la liste <code>dates</code> :</p>
 
 </div>
 </div>
@@ -14704,7 +14703,7 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This can be done as follows:</p>
+<p>Cela peut être fait comme suit:</p>
 
 </div>
 </div>
@@ -14738,7 +14737,7 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The code in the indent is executed <code>N</code> times, each time the value of <code>i</code> is increased by 1 for every execution. The statement executed is to <code>print</code> out the value in the list at index <code>i</code> as shown here:</p>
+<p>Le code dans l'indentation est exécuté <code>N</code> fois, chaque fois que la valeur de <code>i</code> est augmentée de 1 pour chaque exécution. L'instruction exécutée consiste à <code>imprimer</code> la valeur dans la liste à l'index <code>i</code> comme indiqué ici :</p>
 
 </div>
 </div>
@@ -14762,7 +14761,7 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In this example we can print out a sequence of numbers from 0 to 7:</p>
+<p>Dans cet exemple, nous pouvons imprimer une séquence de nombres de 0 à 7 :</p>
 
 </div>
 </div>
@@ -14793,7 +14792,7 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In Python we can directly access the elements in the list as follows:</p>
+<p>En Python, nous pouvons accéder directement aux éléments de la liste comme suit :</p>
 
 </div>
 </div>
@@ -14824,7 +14823,7 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For each iteration, the value of the variable <code>years</code> behaves like the value of <code>dates[i]</code> in the  first example:</p>
+<p>A chaque itération, la valeur de la variable <code>years</code> se comporte comme la valeur de <code>dates[i]</code> dans le premier exemple :</p>
 
 </div>
 </div>
@@ -14848,7 +14847,7 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We can change the elements in a list:</p>
+<p>On peut changer les éléments d'une liste :</p>
 
 </div>
 </div>
@@ -14883,7 +14882,7 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We can access the index and the elements of a list as follows:</p>
+<p>On peut accéder à l'index et aux éléments d'une liste comme suit :</p>
 
 </div>
 </div>
@@ -14916,9 +14915,9 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The variable name used for the item is completely up to the coder, so use your best judgment for choosing a name that makes sense and you will be able to understand when revisiting your code. This item name can then be referenced inside your loop, for example if you wanted to use <code>if</code> statements to perform checks.</p>
-<p>Let's go ahead and work through several example of <code>for</code> loops using a variety of data object types. We'll start simple and build more complexity later on.</p>
-<h2 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h2><p>Iterating through a list</p>
+<p>Le nom de variable utilisé pour l'élément dépend entièrement du codeur, alors utilisez votre meilleur jugement pour choisir un nom qui a du sens et vous serez en mesure de comprendre lorsque vous revisiterez votre code. Ce nom d'élément peut ensuite être référencé dans votre boucle, par exemple si vous souhaitez utiliser des instructions <code>if</code> pour effectuer des vérifications.</p>
+<p>Continuons et examinons plusieurs exemples de boucles <code>for</code> utilisant une variété de types d'objets de données. Nous allons commencer simple et construire plus de complexité plus tard.</p>
+<h2 id="Exemple-1">Exemple 1<a class="anchor-link" href="#Exemple-1">&#182;</a></h2><p>Itérer dans une liste</p>
 
 </div>
 </div>
@@ -14994,8 +14993,8 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Great! Hopefully this makes sense. Now let's add an <code>if</code> statement to check for even numbers. We'll first introduce a new concept here--the modulo.</p>
-<h3 id="Modulo">Modulo<a class="anchor-link" href="#Modulo">&#182;</a></h3><p>The modulo allows us to get the remainder in a division and uses the % symbol. For example:</p>
+<p>Super! J'espère que cela a du sens. Ajoutons maintenant une instruction <code>if</code> pour vérifier les nombres pairs. Nous allons d'abord introduire un nouveau concept ici - le modulo.</p>
+<h3 id="Module">Module<a class="anchor-link" href="#Module">&#182;</a></h3><p>Le modulo nous permet d'obtenir le reste dans une division et utilise le symbole %. Par exemple:</p>
 
 </div>
 </div>
@@ -15046,7 +15045,7 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This makes sense since 17 divided by 5 is 3 remainder 2. Let's see a few more quick examples:</p>
+<p>Cela a du sens puisque 17 divisé par 5 donne 3 reste 2. Voyons quelques exemples rapides :</p>
 
 </div>
 </div>
@@ -15178,9 +15177,9 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice that if a number is fully divisible with no remainder, the result of the modulo call is 0. We can use this to test for even numbers, since if a number modulo 2 is equal to 0, that means it is an even number!</p>
-<p>Back to the <code>for</code> loops!</p>
-<h2 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h2><p>Let's print only the even numbers from that list!</p>
+<p>Notez que si un nombre est entièrement divisible sans reste, le résultat de l'appel modulo est 0. Nous pouvons l'utiliser pour tester les nombres pairs, car si un nombre modulo 2 est égal à 0, cela signifie que c'est un nombre pair !</p>
+<p>Retour aux boucles <code>for</code> !</p>
+<h2 id="Exemple-2">Exemple 2<a class="anchor-link" href="#Exemple-2">&#182;</a></h2><p>N'imprimons que les nombres pairs de cette liste !</p>
 
 </div>
 </div>
@@ -15235,7 +15234,7 @@ Let's try to use a <code>for</code> loop to print all the years presented in the
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We could have also put an <code>else</code> statement in there:</p>
+<p>Nous aurions également pu y mettre une instruction <code>else</code> :</p>
 
 </div>
 </div>
@@ -15297,7 +15296,7 @@ Odd number
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h2><p>Another common idea during a <code>for</code> loop is keeping some sort of running tally during multiple loops. For example, let's create a <code>for</code> loop that sums up the list:</p>
+<h2 id="Exemple-3">Exemple 3<a class="anchor-link" href="#Exemple-3">&#182;</a></h2><p>Une autre idée courante lors d'une boucle <code>for</code> consiste à conserver une sorte de décompte courant pendant plusieurs boucles. Par exemple, créons une boucle <code>for</code> qui résume la liste :</p>
 
 </div>
 </div>
@@ -15352,7 +15351,7 @@ Odd number
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Great! Read over the above cell and make sure you understand fully what is going on. Also we could have implemented a <code>+=</code> to perform the addition towards the sum. For example:</p>
+<p>Super! Lisez la cellule ci-dessus et assurez-vous de bien comprendre ce qui se passe. Nous aurions également pu implémenter un <code>+=</code> pour effectuer l'addition vers la somme. Par exemple:</p>
 
 </div>
 </div>
@@ -15407,7 +15406,7 @@ Odd number
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h2><p>We've used <code>for</code> loops with lists, how about with strings? Remember strings are a sequence so when we iterate through them we will be accessing each item in that string.</p>
+<h2 id="Exemple-4">Exemple 4<a class="anchor-link" href="#Exemple-4">&#182;</a></h2><p>Nous avons utilisé des boucles <code>for</code> avec des listes, qu'en est-il des chaînes ? N'oubliez pas que les chaînes sont une séquence, donc lorsque nous les parcourons, nous accédons à chaque élément de cette chaîne.</p>
 
 </div>
 </div>
@@ -15473,7 +15472,7 @@ g
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Example-5">Example 5<a class="anchor-link" href="#Example-5">&#182;</a></h2><p>Let's now look at how a <code>for</code> loop can be used with a tuple:</p>
+<h2 id="Exemple-5">Exemple 5<a class="anchor-link" href="#Exemple-5">&#182;</a></h2><p>Voyons maintenant comment une boucle <code>for</code> peut être utilisée avec un tuple :</p>
 
 </div>
 </div>
@@ -15529,7 +15528,7 @@ g
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Example-6">Example 6<a class="anchor-link" href="#Example-6">&#182;</a></h2><p>Tuples have a special quality when it comes to <code>for</code> loops. If you are iterating through a sequence that contains tuples, the item can actually be the tuple itself, this is an example of <em>tuple unpacking</em>. During the <code>for</code> loop we will be unpacking the tuple inside of a sequence and we can access the individual items inside that tuple!</p>
+<h2 id="Exemple-6">Exemple 6<a class="anchor-link" href="#Exemple-6">&#182;</a></h2><p>Les tuples ont une qualité particulière lorsqu'il s'agit de boucles <code>for</code>. Si vous parcourez une séquence qui contient des tuples, l'élément peut en fait être le tuple lui-même, c'est un exemple de <em>tuple unpacking</em>. Pendant la boucle <code>for</code> nous allons déballer le tuple à l'intérieur d'une séquence et nous pourrons accéder aux éléments individuels à l'intérieur de ce tuple !</p>
 
 </div>
 </div>
@@ -15638,7 +15637,7 @@ g
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Cool! With tuples in a sequence we can access the items inside of them through unpacking! The reason this is important is because many objects will deliver their iterables through tuples. Let's start exploring iterating through Dictionaries to explore this further!</p>
+<p>Cool! Avec des tuples dans une séquence, nous pouvons accéder aux éléments qu'ils contiennent en décompressant ! La raison pour laquelle cela est important est que de nombreux objets livreront leurs itérables via des tuples. Commençons à explorer l'itération dans les dictionnaires pour explorer cela plus avant !</p>
 
 </div>
 </div>
@@ -15650,7 +15649,7 @@ g
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Example-7">Example 7<a class="anchor-link" href="#Example-7">&#182;</a></h2>
+<h2 id="Exemple-7">Exemple 7<a class="anchor-link" href="#Exemple-7">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15717,9 +15716,9 @@ k3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice how this produces only the keys. So how can we get the values? Or both the keys and the values?</p>
-<p>We're going to introduce three new Dictionary methods: <strong>.keys()</strong>, <strong>.values()</strong> and <strong>.items()</strong></p>
-<p>In Python each of these methods return a <em>dictionary view object</em>. It supports operations like membership test and iteration, but its contents are not independent of the original dictionary – it is only a view. Let's see it in action:</p>
+<p>Remarquez comment cela ne produit que les clés. Alors, comment pouvons-nous obtenir les valeurs? Ou les clés et les valeurs ?</p>
+<p>Nous allons introduire trois nouvelles méthodes de dictionnaire : <strong>.keys()</strong>, <strong>.values()</strong> et <strong>.items()</strong></p>
+<p>En Python, chacune de ces méthodes renvoie un <em>objet de vue dictionnaire</em>. Il prend en charge des opérations telles que le test d'appartenance et l'itération, mais son contenu n'est pas indépendant du dictionnaire d'origine - il ne s'agit que d'une vue. Voyons-le en action :</p>
 
 </div>
 </div>
@@ -15771,7 +15770,7 @@ k3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Since the .items() method supports iteration, we can perform <em>dictionary unpacking</em> to separate keys and values just as we did in the previous examples.</p>
+<p>Étant donné que la méthode .items() prend en charge l'itération, nous pouvons effectuer un * déballage du dictionnaire * pour séparer les clés et les valeurs comme nous l'avons fait dans les exemples précédents.</p>
 
 </div>
 </div>
@@ -15828,7 +15827,7 @@ k3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>If you want to obtain a true list of keys, values, or key/value tuples, you can <em>cast</em> the view as a list:</p>
+<p>Si vous souhaitez obtenir une véritable liste de clés, de valeurs ou de tuples clé/valeur, vous pouvez <em>convertir</em> la vue en liste :</p>
 
 </div>
 </div>
@@ -15879,7 +15878,7 @@ k3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Remember that dictionaries are unordered, and that keys and values come back in arbitrary order. You can obtain a sorted list using sorted():</p>
+<p>N'oubliez pas que les dictionnaires ne sont pas ordonnés et que les clés et les valeurs reviennent dans un ordre arbitraire. Vous pouvez obtenir une liste triée en utilisant sorted() :</p>
 
 </div>
 </div>
@@ -15930,7 +15929,7 @@ k3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Quiz-on-Loops">Quiz on Loops<a class="anchor-link" href="#Quiz-on-Loops">&#182;</a></h1>
+<h1 id="Quiz-sur-les-boucles">Quiz sur les boucles<a class="anchor-link" href="#Quiz-sur-les-boucles">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -15941,7 +15940,7 @@ k3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Write a <code>for</code> loop the prints out all the element between <b>-5</b> and <b>5</b> using the range function.</p>
+<p>Écrivez une boucle <code>for</code> qui imprime tous les éléments entre <b>-5</b> et <b>5</b> en utilisant la fonction range.</p>
 
 </div>
 </div>
@@ -15987,9 +15986,9 @@ k3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Print the elements of the following list:
+<p>Imprimez les éléments de la liste suivante :
 <code>Genres=[ 'rock', 'R&amp;B', 'Soundtrack', 'R&amp;B', 'soul', 'pop']</code>
-Make sure you follow Python conventions.</p>
+Assurez-vous de suivre les conventions Python.</p>
 
 </div>
 </div>
@@ -16036,7 +16035,7 @@ Make sure you follow Python conventions.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
+<h>
 
 </div>
 </div>
@@ -16048,7 +16047,7 @@ Make sure you follow Python conventions.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Write a for loop that prints out the following list: <code>squares=['red', 'yellow', 'green', 'purple', 'blue']</code></p>
+<p>Écrivez une boucle for qui affiche la liste suivante : <code>squares=['red', 'yellow', 'green', 'purple', 'blue']</code></p>
 
 </div>
 </div>
@@ -16095,7 +16094,7 @@ Make sure you follow Python conventions.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
+<h>
 
 </div>
 </div>

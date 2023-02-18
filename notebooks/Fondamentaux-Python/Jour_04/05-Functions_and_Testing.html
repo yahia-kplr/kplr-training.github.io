@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python/blob/main/Jour_04/05-Functions_and_Testing.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python_fr/blob/main/Jour_04/05-Functions_and_Testing.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14609,7 +14609,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Functions-and-Testing-/-NEED-TO-KNOW">Functions and Testing / NEED-TO-KNOW<a class="anchor-link" href="#Functions-and-Testing-/-NEED-TO-KNOW">&#182;</a></h1>
+<h1 id="Fonctions-et-tests-/-BESOIN-DE-SAVOIR">Fonctions et tests / BESOIN DE SAVOIR<a class="anchor-link" href="#Fonctions-et-tests-/-BESOIN-DE-SAVOIR">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14620,20 +14620,20 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="How-to-check-if-a-function-works-as-expected?">How to check if a function works as expected?<a class="anchor-link" href="#How-to-check-if-a-function-works-as-expected?">&#182;</a></h3><p>Consider the following implementation of <a href="https://docs.python.org/3/library/functions.html#pow">pow()</a></p>
+<h3 id="Comment-v%C3%A9rifier-si-une-fonction-fonctionne-comme-pr%C3%A9vu%C2%A0?">Comment v&#233;rifier si une fonction fonctionne comme pr&#233;vu&#160;?<a class="anchor-link" href="#Comment-v%C3%A9rifier-si-une-fonction-fonctionne-comme-pr%C3%A9vu%C2%A0?">&#182;</a></h3><p>Considérez l'implémentation suivante de <a href="https://docs.python.org/3/library/functions.html#pow">pow()</a></p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    For integers x and y.</span>
-<span class="sd">    Return x to the power of y (x^y)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-        <span class="n">result</span> <span class="o">*=</span> <span class="n">x</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Pour les entiers x et y.</span>
+<span class="sd">Ramène x à la puissance y (x^y)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">résultat</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">pour</span> <span class="n">_</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">plage</span> <span class="p">(</span><span class="n">y</span><span class="p">):</span>
+<span class="n">résultat</span> <span class="o">*=</span> <span class="n">x</span>
 
-    <span class="k">return</span> <span class="n">result</span>
+<span class="n">résultat</span> <span class="n">de</span> <span class="n">retour</span>
 </pre></div>
-<p>You can use assert.</p>
-<div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">my_pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span>
+<p>Vous pouvez utiliser assert.</p>
+<div class="highlight"><pre><span></span><span class="n">affirmer</span> <span class="n">mon_pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span>
 <span class="k">assert</span> <span class="n">my_pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.5</span>
 </pre></div>
 
@@ -14715,9 +14715,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Side-effects">Side-effects<a class="anchor-link" href="#Side-effects">&#182;</a></h3><ul>
-<li>Functions with no side-effects are easy to test with <code>assert</code>.</li>
-<li>Functions with side-effects (like print, input, read and write to storage) are not easy to test with <code>assert</code></li>
+<h3 id="Effets-secondaires">Effets secondaires<a class="anchor-link" href="#Effets-secondaires">&#182;</a></h3><ul>
+<li>Les fonctions sans effets secondaires sont faciles à tester avec <code>assert</code>.</li>
+<li>Les fonctions avec des effets secondaires (comme print, input, read et write to storage) ne sont pas faciles à tester avec <code>assert</code></li>
 </ul>
 
 </div>

@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python/blob/main/Jour_05/03-args_and_kwargs.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python_fr/blob/main/Jour_05/03-args_and_kwargs.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14609,7 +14609,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Python-functions-*args-and-**kwargs-/-NICE-TO-KNOW">Python functions <code>*args</code> and <code>**kwargs</code> / NICE-TO-KNOW<a class="anchor-link" href="#Python-functions-*args-and-**kwargs-/-NICE-TO-KNOW">&#182;</a></h1>
+<h1 id="Fonctions-Python-*args-et-**kwargs-/-BON-%C3%80-SAVOIR">Fonctions Python <code>*args</code> et <code>**kwargs</code> / BON &#192; SAVOIR<a class="anchor-link" href="#Fonctions-Python-*args-et-**kwargs-/-BON-%C3%80-SAVOIR">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14620,9 +14620,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Consider-the-following-problem">Consider the following problem<a class="anchor-link" href="#Consider-the-following-problem">&#182;</a></h3><p>Create a function that returns 10% of the sum of the arguments.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ten_percent</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span><span class="o">*</span><span class="mf">0.1</span>
+<h3 id="Consid%C3%A9rez-le-probl%C3%A8me-suivant">Consid&#233;rez le probl&#232;me suivant<a class="anchor-link" href="#Consid%C3%A9rez-le-probl%C3%A8me-suivant">&#182;</a></h3><p>Créez une fonction qui renvoie 10 % de la somme des arguments.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dix_pourcent</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="n">retour</span> <span class="n">somme</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span><span class="o">*</span><span class="mf">0.1</span>
 </pre></div>
 
 </div>
@@ -14707,14 +14707,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Use-of-*args">Use of <code>*args</code><a class="anchor-link" href="#Use-of-*args">&#182;</a></h3><p>If a function parameter starts with an asterisk <code>*</code></p>
+<h3 id="Utilisation-de-*args">Utilisation de <code>*args</code><a class="anchor-link" href="#Utilisation-de-*args">&#182;</a></h3><p>Si un paramètre de fonction commence par un astérisque <code>*</code></p>
 <ul>
-<li>it allows for an arbitrary number of arguments</li>
-<li>the function takes them in as a tuple of values</li>
-<li>it is standard to use <code>*args</code>, but any name can be used</li>
+<li>il permet un nombre arbitraire d'arguments</li>
+<li>la fonction les prend comme un tuple de valeurs</li>
+<li>il est standard d'utiliser <code>*args</code>, mais n'importe quel nom peut être utilisé</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ten_percent</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">*</span><span class="mf">0.1</span>
+<span class="n">retour</span> <span class="n">somme</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">*</span><span class="mf">0.1</span>
 </pre></div>
 
 </div>
@@ -14828,13 +14828,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Use-of-**kwargs">Use of <code>**kwargs</code><a class="anchor-link" href="#Use-of-**kwargs">&#182;</a></h3><p>A function can also take an arbitrary numbers of keyworded arguments.</p>
+<h3 id="Utilisation-de-**kwargs">Utilisation de <code>**kwargs</code><a class="anchor-link" href="#Utilisation-de-**kwargs">&#182;</a></h3><p>Une fonction peut également prendre un nombre arbitraire d'arguments avec mots clés.</p>
 <ul>
-<li>Instead of creating a tuple of values, <code>**kwargs</code> builds a dictionary of key/value pairs.</li>
+<li>Au lieu de créer un tuple de valeurs, <code>**kwargs</code> construit un dictionnaire de paires clé/valeur.</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="n">pour</span> <span class="n">la</span> <span class="n">clé</span><span class="p">,</span> <span class="n">valeur</span> <span class="n">dans</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clé</span><span class="p">,</span> <span class="n">valeur</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14936,12 +14936,12 @@ height 1.83
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Combining-*args-and-**kwargs">Combining <code>*args</code> and <code>**kwargs</code><a class="anchor-link" href="#Combining-*args-and-**kwargs">&#182;</a></h3><p>You can have both.</p>
+<h3 id="Combinaison-de-*args-et-**kwargs">Combinaison de <code>*args</code> et <code>**kwargs</code><a class="anchor-link" href="#Combinaison-de-*args-et-**kwargs">&#182;</a></h3><p>Vous pouvez avoir les deux.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="n">pour</span> <span class="n">l</span><span class="s1">&#39;élément dans args :</span>
+<span class="n">imprimer</span> <span class="p">(</span><span class="n">article</span><span class="p">)</span>
+<span class="n">pour</span> <span class="n">la</span> <span class="n">clé</span><span class="p">,</span> <span class="n">valeur</span> <span class="n">dans</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clé</span><span class="p">,</span> <span class="n">valeur</span><span class="p">)</span>
 </pre></div>
 
 </div>

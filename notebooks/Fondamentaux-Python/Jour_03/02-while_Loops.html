@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python/blob/main/Jour_03/02-while_Loops.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python_fr/blob/main/Jour_03/02-while_Loops.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14609,15 +14609,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="while-Loops">while Loops<a class="anchor-link" href="#while-Loops">&#182;</a></h1><p>The <code>while</code> statement in Python is one of most general ways to perform iteration. A <code>while</code> statement will repeatedly execute a single statement or group of statements as long as the condition is true. The reason it is called a 'loop' is because the code statements are looped through over and over again until the condition is no longer met.</p>
-<p>The general format of a while loop is:</p>
-<pre><code>while test:
-    code statements
-else:
-    final code statements
-
-</code></pre>
-<p>Let’s look at a few simple <code>while</code> loops in action.</p>
+<h1 id="boucles-while">boucles while<a class="anchor-link" href="#boucles-while">&#182;</a></h1><p>L'instruction <code>while</code> en Python est l'un des moyens les plus généraux d'effectuer une itération. Une instruction <code>while</code> exécutera de manière répétée une seule instruction ou un groupe d'instructions tant que la condition est vraie. La raison pour laquelle on l'appelle une &quot;boucle&quot; est que les instructions de code sont répétées en boucle jusqu'à ce que la condition ne soit plus remplie.</p>
+<p>Le format général d'une boucle while est :</p>
+<p>pendant l'essai :
+instructions de code
+autre:
+déclarations de code finales</p>
+<p>Regardons quelques boucles <code>while</code> simples en action.</p>
 
 </div>
 </div>
@@ -14629,7 +14627,7 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>As you can see, the <code>for</code> loop is used for a controlled flow of repetition. However, what if we don't know when we want to stop the loop? What if we want to keep executing a code block until a certain condition is met? The <code>while</code> loop exists as a tool for repeated execution based on a condition. The code block will keep being executed until the given logical condition returns a <strong>False</strong> boolean value.</p>
+<p>Comme vous pouvez le voir, la boucle <code>for</code> est utilisée pour un flux contrôlé de répétition. Cependant, que se passe-t-il si nous ne savons pas quand nous voulons arrêter la boucle ? Et si nous voulons continuer à exécuter un bloc de code jusqu'à ce qu'une certaine condition soit remplie ? La boucle <code>while</code> existe en tant qu'outil pour une exécution répétée basée sur une condition. Le bloc de code continuera à être exécuté jusqu'à ce que la condition logique donnée renvoie une valeur booléenne <strong>False</strong>.</p>
 
 </div>
 </div>
@@ -14641,7 +14639,7 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let’s say we would like to iterate through list <code>dates</code> and stop at the year 1973, then print out the number of iterations. This can be done with the following block of code:</p>
+<p>Disons que nous aimerions parcourir la liste <code>dates</code> et nous arrêter à l'année 1973, puis imprimer le nombre d'itérations. Cela peut être fait avec le bloc de code suivant :</p>
 
 </div>
 </div>
@@ -14681,7 +14679,7 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>A while loop iterates merely until the condition in the argument is not  met, as shown in the following figure:</p>
+<p>Une boucle while effectue une itération jusqu'à ce que la condition de l'argument ne soit pas remplie, comme illustré dans la figure suivante :</p>
 
 </div>
 </div>
@@ -14705,7 +14703,7 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
+<h>
 
 </div>
 </div>
@@ -14717,7 +14715,7 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice how many times the print statements occurred and how the <code>while</code> loop kept going until the True condition was met, which occurred once x==10. It's important to note that once this occurred the code stopped. Let's see how we could add an <code>else</code> statement:</p>
+<p>Remarquez combien de fois les instructions d'impression se sont produites et comment la boucle <code>while</code> a continué jusqu'à ce que la condition True soit remplie, ce qui s'est produit une fois x==10. Il est important de noter qu'une fois que cela s'est produit, le code s'est arrêté. Voyons comment ajouter une instruction <code>else</code> :</p>
 
 </div>
 </div>
@@ -14855,25 +14853,20 @@ x is currently:  9
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="break,-continue,-pass">break, continue, pass<a class="anchor-link" href="#break,-continue,-pass">&#182;</a></h1><p>We can use <code>break</code>, <code>continue</code>, and <code>pass</code> statements in our loops to add additional functionality for various cases. The three statements are defined by:</p>
-<pre><code>break: Breaks out of the current closest enclosing loop.
-continue: Goes to the top of the closest enclosing loop.
-pass: Does nothing at all.
-
-
-</code></pre>
-<p>Thinking about <code>break</code> and <code>continue</code> statements, the general format of the <code>while</code> loop looks like this:</p>
-<pre><code>while test: 
-    code statement
-    if test: 
-        break
-    if test: 
-        continue 
-else:
-
-</code></pre>
-<p><code>break</code> and <code>continue</code> statements can appear anywhere inside the loop’s body, but we will usually put them further nested in conjunction with an <code>if</code> statement to perform an action based on some condition.</p>
-<p>Let's go ahead and look at some examples!</p>
+<h1 id="pause,-continuer,-passer">pause, continuer, passer<a class="anchor-link" href="#pause,-continuer,-passer">&#182;</a></h1><p>Nous pouvons utiliser les instructions <code>break</code>, <code>continue</code> et <code>pass</code> dans nos boucles pour ajouter des fonctionnalités supplémentaires dans divers cas. Les trois énoncés sont définis par :</p>
+<p>break : sort de la boucle englobante la plus proche actuelle.
+continue : va au début de la boucle englobante la plus proche.
+pass : ne fait rien du tout.</p>
+<p>En pensant aux instructions <code>break</code> et <code>continue</code>, le format général de la boucle <code>while</code> ressemble à ceci :</p>
+<p>pendant l'essai :
+déclaration de code
+si essai :
+casser
+si essai :
+continuer
+autre:</p>
+<p>Les instructions <code>break</code> et <code>continue</code> peuvent apparaître n'importe où dans le corps de la boucle, mais nous les placerons généralement plus imbriquées en conjonction avec une instruction <code>if</code> pour effectuer une action basée sur une condition.</p>
+<p>Allons-y et regardons quelques exemples !</p>
 
 </div>
 </div>
@@ -14961,7 +14954,7 @@ continuing...
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note how we have a printed statement when x==3, and a continue being printed out as we continue through the outer while loop. Let's put in a break once x ==3 and see if the result makes sense:</p>
+<p>Notez comment nous avons une instruction imprimée lorsque x==3, et un continue imprimé alors que nous continuons dans la boucle while externe. Faisons une pause une fois x ==3 et voyons si le résultat a du sens :</p>
 
 </div>
 </div>
@@ -15029,9 +15022,9 @@ Breaking because x==3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note how the other <code>else</code> statement wasn't reached and continuing was never printed!</p>
-<p>After these brief but simple examples, you should feel comfortable using <code>while</code> statements in your code.</p>
-<p><strong>A word of caution however! It is possible to create an infinitely running loop with <code>while</code> statements. For example:</strong></p>
+<p>Notez que l'autre instruction <code>else</code> n'a pas été atteinte et que continuer n'a jamais été imprimé !</p>
+<p>Après ces exemples brefs mais simples, vous devriez vous sentir à l'aise avec les instructions <code>while</code> dans votre code.</p>
+<p><strong>Un mot d'avertissement cependant! Il est possible de créer une boucle s'exécutant à l'infini avec des instructions <code>while</code>. Par exemple:</strong></p>
 
 </div>
 </div>
@@ -15061,7 +15054,7 @@ Breaking because x==3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>A quick note: If you <em>did</em> run the above cell, click on the Kernel menu above to restart the kernel!</p>
+<p>Une note rapide : si vous avez <em>exécuté</em> la cellule ci-dessus, cliquez sur le menu Kernel ci-dessus pour redémarrer le noyau !</p>
 
 </div>
 </div>

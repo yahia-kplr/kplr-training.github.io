@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python/blob/main/Jour_04/04-Functions-Scopes.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python_fr/blob/main/Jour_04/04-Functions-Scopes.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14609,7 +14609,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Python-Functions-and-Scopes-/-NEED-TO-KNOW">Python Functions and Scopes / NEED-TO-KNOW<a class="anchor-link" href="#Python-Functions-and-Scopes-/-NEED-TO-KNOW">&#182;</a></h1>
+<h1 id="Fonctions-et-port%C3%A9es-Python-/-BESOIN-DE-SAVOIR">Fonctions et port&#233;es Python / BESOIN DE SAVOIR<a class="anchor-link" href="#Fonctions-et-port%C3%A9es-Python-/-BESOIN-DE-SAVOIR">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14620,14 +14620,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Function-scopes">Function scopes<a class="anchor-link" href="#Function-scopes">&#182;</a></h3><p>Consider the following code</p>
-<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
+<h3 id="%C3%89tendues-des-fonctions">&#201;tendues des fonctions<a class="anchor-link" href="#%C3%89tendues-des-fonctions">&#182;</a></h3><p>Considérez le code suivant</p>
+<div class="highlight"><pre><span></span><span class="n">un</span> <span class="o">=</span> <span class="mi">25</span>
 
-<span class="k">def</span> <span class="nf">return_value</span><span class="p">():</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">50</span>
-    <span class="k">return</span> <span class="n">a</span>
+<span class="k">def</span> <span class="nf">return_value</span><span class="p">()</span> <span class="p">:</span>
+<span class="n">un</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">retourner</span> <span class="n">un</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">imprimer</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14736,32 +14736,32 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="LEGB-rule">LEGB rule<a class="anchor-link" href="#LEGB-rule">&#182;</a></h3><ul>
-<li><strong>Local</strong> is the code block or body of any Python function.</li>
-<li><strong>Enclosing</strong> is a special scope that only exists for nested functions.</li>
-<li><strong>Global</strong> is the top-most scope in a Python program, script, or module.</li>
-<li><strong>Built-in</strong> is a special Python scope that’s created or loaded whenever you run a script or open an interactive session.</li>
+<h3 id="R%C3%A8gle-LEGB">R&#232;gle LEGB<a class="anchor-link" href="#R%C3%A8gle-LEGB">&#182;</a></h3><ul>
+<li><strong>Local</strong> est le bloc de code ou le corps de toute fonction Python.</li>
+<li><strong>Enclosing</strong> est une étendue spéciale qui n'existe que pour les fonctions imbriquées.</li>
+<li><strong>Global</strong> est la portée la plus élevée dans un programme, un script ou un module Python.</li>
+<li><strong> Intégré </strong> est une étendue Python spéciale qui est créée ou chargée chaque fois que vous exécutez un script ou ouvrez une session interactive.</li>
 </ul>
-<h3 id="The-ONLY-rule-to-follow">The ONLY rule to follow<a class="anchor-link" href="#The-ONLY-rule-to-follow">&#182;</a></h3><ul>
-<li>Don't use the same names in different scopes.</li>
+<h3 id="La-SEULE-r%C3%A8gle-%C3%A0-suivre">La SEULE r&#232;gle &#224; suivre<a class="anchor-link" href="#La-SEULE-r%C3%A8gle-%C3%A0-suivre">&#182;</a></h3><ul>
+<li>N'utilisez pas les mêmes noms dans des portées différentes.</li>
 </ul>
-<p>Example: DON'T DO THIS</p>
-<div class="highlight"><pre><span></span><span class="c1"># Mistake: Overwrite built-ins</span>
-<span class="nb">list</span> <span class="o">=</span> <span class="mi">10</span>
+<p>Exemple : NE FAITES PAS CELA</p>
+<div class="highlight"><pre><span></span><span class="c1"># Erreur : écraser les éléments intégrés</span>
+<span class="n">liste</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="c1"># Mistake: Use global variable names in function</span>
+<span class="c1"># Erreur : Utiliser des noms de variables globales dans la fonction</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">()</span> <span class="p">:</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">30</span>
 
-<span class="c1"># Mistake: Use local variable names in nested function</span>
+<span class="c1"># Erreur : Utiliser des noms de variables locales dans une fonction imbriquée</span>
 
-<span class="k">def</span> <span class="nf">outer_func</span><span class="p">():</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">def</span> <span class="nf">fonction_externe</span><span class="p">()</span> <span class="p">:</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 
-    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">def</span> <span class="nf">fonction_intérieure</span><span class="p">()</span> <span class="p">:</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
 </pre></div>
 
 </div>
@@ -14871,13 +14871,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Local-scope">Local scope<a class="anchor-link" href="#Local-scope">&#182;</a></h3><p>Consider this code.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-    <span class="k">return</span> <span class="n">result</span>
+<h3 id="Port%C3%A9e-locale">Port&#233;e locale<a class="anchor-link" href="#Port%C3%A9e-locale">&#182;</a></h3><p>Considérez ce code.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ma_fonction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="n">résultat</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">résultat</span> <span class="n">de</span> <span class="n">retour</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">imprimer</span> <span class="p">(</span><span class="n">résultat</span><span class="p">)</span>
+<span class="n">imprimer</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14972,19 +14972,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Enclosing">Enclosing<a class="anchor-link" href="#Enclosing">&#182;</a></h3><p>Consider the following code.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">outer_function</span><span class="p">():</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<h3 id="Enveloppant">Enveloppant<a class="anchor-link" href="#Enveloppant">&#182;</a></h3><p>Considérez le code suivant.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fonction_externe</span><span class="p">()</span> <span class="p">:</span>
+<span class="n">un</span> <span class="o">=</span> <span class="mi">10</span>
 
-    <span class="k">def</span> <span class="nf">inner_function</span><span class="p">():</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">fonction_intérieure</span><span class="p">()</span> <span class="p">:</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">imprimer</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">imprimer</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">impression</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
-<span class="n">outer_function</span><span class="p">()</span>
-<span class="n">inner_function</span><span class="p">()</span>
+<span class="n">fonction_extérieure</span><span class="p">()</span>
+<span class="n">fonction_intérieure</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -15078,11 +15078,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Global">Global<a class="anchor-link" href="#Global">&#182;</a></h3><p>Consider the following code.</p>
-<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<h3 id="Mondial">Mondial<a class="anchor-link" href="#Mondial">&#182;</a></h3><p>Considérez le code suivant.</p>
+<div class="highlight"><pre><span></span><span class="n">un</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="k">def</span> <span class="nf">update_a</span><span class="p">():</span>
-    <span class="n">a</span> <span class="o">+=</span> <span class="mi">10</span>
+<span class="k">def</span> <span class="nf">update_a</span><span class="p">()</span> <span class="p">:</span>
+<span class="n">un</span> <span class="o">+=</span> <span class="mi">10</span>
 
 <span class="n">update_a</span><span class="p">()</span>
 </pre></div>
@@ -15174,7 +15174,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Built-in">Built-in<a class="anchor-link" href="#Built-in">&#182;</a></h3><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span>
+<h3 id="Int%C3%A9gr%C3%A9">Int&#233;gr&#233;<a class="anchor-link" href="#Int%C3%A9gr%C3%A9">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">vous</span> <span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span>
 </pre></div>
 
 </div>

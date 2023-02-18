@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python/blob/main/Jour_05/04-Errors_and_Exceptions_Handling.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/yahia-kplr/Fondamentaux-Python_fr/blob/main/Jour_05/04-Errors_and_Exceptions_Handling.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14609,7 +14609,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Errors-and-Exception-Handling">Errors and Exception Handling<a class="anchor-link" href="#Errors-and-Exception-Handling">&#182;</a></h1><p>In this lecture we will learn about Errors and Exception Handling in Python. You've definitely already encountered errors by this point in the course. For example:</p>
+<h1 id="Gestion-des-erreurs-et-des-exceptions">Gestion des erreurs et des exceptions<a class="anchor-link" href="#Gestion-des-erreurs-et-des-exceptions">&#182;</a></h1><p>Dans cette conférence, nous découvrirons les erreurs et la gestion des exceptions en Python. Vous avez certainement déjà rencontré des erreurs à ce stade du cours. Par exemple:</p>
 
 </div>
 </div>
@@ -14662,9 +14662,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note how we get a SyntaxError, with the further description that it was an EOL (End of Line Error) while scanning the string literal. This is specific enough for us to see that we forgot a single quote at the end of the line. Understanding these various error types will help you debug your code much faster.</p>
-<p>This type of error and description is known as an Exception. Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called exceptions and are not unconditionally fatal.</p>
-<p>You can check out the full list of built-in exceptions <a href="https://docs.python.org/3/library/exceptions.html">here</a>. Now let's learn how to handle errors and exceptions in our own code.</p>
+<p>Notez comment nous obtenons une SyntaxError, avec la description supplémentaire qu'il s'agissait d'une EOL (Erreur de fin de ligne) lors de l'analyse de la chaîne littérale. C'est suffisamment précis pour que nous constations que nous avons oublié un seul guillemet à la fin de la ligne. Comprendre ces différents types d'erreurs vous aidera à déboguer votre code beaucoup plus rapidement.</p>
+<p>Ce type d'erreur et de description est appelé une exception. Même si une instruction ou une expression est syntaxiquement correcte, elle peut provoquer une erreur lors d'une tentative d'exécution. Les erreurs détectées lors de l'exécution sont appelées exceptions et ne sont pas inconditionnellement fatales.</p>
+<p>Vous pouvez consulter la liste complète des exceptions intégrées <a href="https://docs.python.org/3/library/exceptions.html">ici</a>. Apprenons maintenant à gérer les erreurs et les exceptions dans notre propre code.</p>
 
 </div>
 </div>
@@ -14676,20 +14676,18 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="try-and-except">try and except<a class="anchor-link" href="#try-and-except">&#182;</a></h2><p>The basic terminology and syntax used to handle errors in Python are the <code>try</code> and <code>except</code> statements. The code which can cause an exception to occur is put in the <code>try</code> block and the handling of the exception is then implemented in the <code>except</code> block of code. The syntax follows:</p>
-<pre><code>try:
-   You do your operations here...
-   ...
-except ExceptionI:
-   If there is ExceptionI, then execute this block.
-except ExceptionII:
-   If there is ExceptionII, then execute this block.
-   ...
-else:
-   If there is no exception then execute this block. 
-
-</code></pre>
-<p>We can also just check for any exception with just using <code>except:</code> To get a better understanding of all this let's check out an example: We will look at some code that opens and writes a file:</p>
+<h2 id="essayez-et-sauf">essayez et sauf<a class="anchor-link" href="#essayez-et-sauf">&#182;</a></h2><p>La terminologie et la syntaxe de base utilisées pour gérer les erreurs en Python sont les instructions <code>try</code> et <code>except</code>. Le code qui peut provoquer une exception est placé dans le bloc <code>try</code> et la gestion de l'exception est ensuite implémentée dans le bloc de code <code>except</code>. La syntaxe suit :</p>
+<p>essayer:
+Vous faites vos opérations ici...
+...
+sauf Exception1 :
+S'il y a ExceptionI, alors exécutez ce bloc.
+sauf ExceptionII :
+S'il y a ExceptionII, alors exécutez ce bloc.
+...
+autre:
+S'il n'y a pas d'exception, exécutez ce bloc.</p>
+<p>Nous pouvons également simplement vérifier toute exception en utilisant simplement <code>sauf :</code> Pour mieux comprendre tout cela, examinons un exemple : nous examinerons un code qui ouvre et écrit un fichier :</p>
 
 </div>
 </div>
@@ -14746,7 +14744,7 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now let's see what would happen if we did not have write permission (opening only with 'r'):</p>
+<p>Voyons maintenant ce qui se passerait si nous n'avions pas l'autorisation d'écriture (ouverture uniquement avec 'r'):</p>
 
 </div>
 </div>
@@ -14803,8 +14801,8 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Great! Notice how we only printed a statement! The code still ran and we were able to continue doing actions and running code blocks. This is extremely useful when you have to account for possible input errors in your code. You can be prepared for the error and keep running code, instead of your code just breaking as we saw above.</p>
-<p>We could have also just said <code>except:</code> if we weren't sure what exception would occur. For example:</p>
+<p>Super! Remarquez que nous n'avons imprimé qu'un relevé ! Le code fonctionnait toujours et nous avons pu continuer à effectuer des actions et à exécuter des blocs de code. Ceci est extrêmement utile lorsque vous devez tenir compte d'éventuelles erreurs de saisie dans votre code. Vous pouvez vous préparer à l'erreur et continuer à exécuter du code, au lieu que votre code se brise comme nous l'avons vu ci-dessus.</p>
+<p>Nous aurions également pu simplement dire <code>sauf :</code> si nous n'étions pas sûrs de l'exception qui se produirait. Par exemple:</p>
 
 </div>
 </div>
@@ -14861,17 +14859,15 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Great! Now we don't actually need to memorize that list of exception types! Now what if we kept wanting to run code after the exception occurred? This is where <code>finally</code> comes in.</p>
-<h2 id="finally">finally<a class="anchor-link" href="#finally">&#182;</a></h2><p>The <code>finally:</code> block of code will always be run regardless if there was an exception in the <code>try</code> code block. The syntax is:</p>
-<pre><code>try:
-   Code block here
-   ...
-   Due to any exception, this code may be skipped!
-finally:
-   This code block would always be executed.
-
-</code></pre>
-<p>For example:</p>
+<p>Super! Maintenant, nous n'avons plus besoin de mémoriser cette liste de types d'exception ! Et si nous continuions à vouloir exécuter du code après que l'exception se soit produite ? C'est là qu'intervient <code>enfin</code>.</p>
+<h2 id="enfin">enfin<a class="anchor-link" href="#enfin">&#182;</a></h2><p>Le bloc de code <code>finally :</code> sera toujours exécuté, qu'il y ait ou non une exception dans le bloc de code <code>try</code>. La syntaxe est :</p>
+<p>essayer:
+Bloc de code ici
+...
+En raison de toute exception, ce code peut être ignoré !
+enfin:
+Ce bloc de code serait toujours exécuté.</p>
+<p>Par exemple:</p>
 
 </div>
 </div>
@@ -14925,7 +14921,7 @@ finally:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We can use this in conjunction with <code>except</code>. Let's see a new example that will take into account a user providing the wrong input:</p>
+<p>Nous pouvons l'utiliser en conjonction avec <code>except</code>. Voyons un nouvel exemple qui prendra en compte un utilisateur fournissant la mauvaise entrée :</p>
 
 </div>
 </div>
@@ -15059,7 +15055,7 @@ Finally, I executed!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice how we got an error when trying to print val (because it was never properly assigned). Let's remedy this by asking the user and checking to make sure the input type is an integer:</p>
+<p>Remarquez comment nous avons eu une erreur en essayant d'imprimer val (parce qu'il n'a jamais été correctement attribué). Remédions à cela en demandant à l'utilisateur et en vérifiant que le type d'entrée est un entier :</p>
 
 </div>
 </div>
@@ -15167,7 +15163,7 @@ During handling of the above exception, another exception occurred:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Hmmm...that only did one check. How can we continually keep checking? We can use a while loop!</p>
+<p>Hmmm... qui n'a fait qu'une seule vérification. Comment pouvons-nous continuellement continuer à vérifier? On peut utiliser une boucle while !</p>
 
 </div>
 </div>
@@ -15252,8 +15248,8 @@ Finally, I executed!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>So why did our function print &quot;Finally, I executed!&quot; after each trial, yet it never printed <code>val</code> itself? This is because with a try/except/finally clause, any <code>continue</code> or <code>break</code> statements are reserved until <em>after</em> the try clause is completed. This means that even though a successful input of <strong>3</strong> brought us to the <code>else:</code> block, and a <code>break</code> statement was thrown, the try clause continued through to <code>finally:</code> before breaking out of the while loop. And since <code>print(val)</code> was outside the try clause, the <code>break</code> statement prevented it from running.</p>
-<p>Let's make one final adjustment:</p>
+<p>Alors pourquoi notre fonction a-t-elle imprimé &quot;Enfin, j'ai exécuté !&quot; après chaque essai, mais il n'a jamais imprimé &quot;val&quot; lui-même ? En effet, avec une clause try/except/finally, toutes les instructions <code>continue</code> ou <code>break</code> sont réservées jusqu'à <em>après</em> que la clause try soit terminée. Cela signifie que même si une entrée réussie de <strong>3</strong> nous a amenés au bloc <code>else :</code> et qu'une instruction <code>break</code> a été émise, la clause try a continué jusqu'à &lt; code&gt;finally :</code> avant de sortir de la boucle while. Et puisque <code>print(val)</code> était en dehors de la clause try, l'instruction <code>break</code> l'a empêché de s'exécuter.</p>
+<p>Faisons un dernier réglage :</p>
 
 </div>
 </div>
@@ -15336,7 +15332,7 @@ Finally, I executed!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Great! Now you know how to handle errors and exceptions in Python with the try, except, else, and finally notation!</strong></p>
+<p><strong>Super! Vous savez maintenant comment gérer les erreurs et les exceptions en Python avec la notation try, except, else et enfin !</strong></p>
 
 </div>
 </div>
