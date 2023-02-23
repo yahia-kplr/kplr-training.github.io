@@ -14597,7 +14597,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/ayoub-kplr/AI-Architecture-Cloud/blob/main/Azure/python%20Notebooks/08_Create_a_Pipeline.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<h1 id="Create-a-Pipeline">Create a Pipeline<a class="anchor-link" href="#Create-a-Pipeline">&#182;</a></h1><p>You can perform the various steps required to ingest data, train a model, and register the model individually by using the Azure ML SDK to run script-based experiments. However, in an enterprise environment it is common to encapsulate the sequence of discrete steps required to build a machine learning solution into a <em>pipeline</em> that can be run on one or more compute targets; either on-demand by a user, from an automated build process, or on a schedule.</p>
+<p>In this notebook, you'll bring together all of these elements to create a simple pipeline that pre-processes data and then trains and registers a model.</p>
 
 </div>
 </div>
@@ -14609,22 +14610,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Cr%C3%A9er-un-pipeline">Cr&#233;er un pipeline<a class="anchor-link" href="#Cr%C3%A9er-un-pipeline">&#182;</a></h1><p>Vous pouvez effectuer les différentes étapes requises pour ingérer des données, former un modèle et inscrire le modèle individuellement en utilisant le SDK Azure ML pour exécuter des expériences basées sur des scripts. Cependant, dans un environnement d'entreprise, il est courant d'encapsuler la séquence d'étapes discrètes nécessaires pour créer une solution d'apprentissage automatique dans un * pipeline * qui peut être exécuté sur une ou plusieurs cibles de calcul ; soit à la demande d'un utilisateur, à partir d'un processus de construction automatisé, soit selon un calendrier.</p>
-<p>Dans ce notebook, vous allez rassembler tous ces éléments pour créer un pipeline simple qui prétraite les données, puis forme et enregistre un modèle.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Connectez-vous-%C3%A0-votre-espace-de-travail">Connectez-vous &#224; votre espace de travail<a class="anchor-link" href="#Connectez-vous-%C3%A0-votre-espace-de-travail">&#182;</a></h2><p>Pour commencer, connectez-vous à votre espace de travail.</p>
+<h2 id="Connect-to-your-workspace">Connect to your workspace<a class="anchor-link" href="#Connect-to-your-workspace">&#182;</a></h2><p>To get started, connect to your workspace.</p>
 <blockquote>
-<p><strong>Remarque</strong> : Si vous n'avez pas encore établi de session authentifiée avec votre abonnement Azure, vous serez invité à vous authentifier en cliquant sur un lien, en saisissant un code d'authentification et en vous connectant à Azure.</p>
+<p><strong>Note</strong>: If you haven't already established an authenticated session with your Azure subscription, you'll be prompted to authenticate by clicking a link, entering an authentication code, and signing into Azure.</p>
 </blockquote>
 
 </div>
@@ -14658,7 +14646,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Pr%C3%A9parer-les-donn%C3%A9es">Pr&#233;parer les donn&#233;es<a class="anchor-link" href="#Pr%C3%A9parer-les-donn%C3%A9es">&#182;</a></h2><p>Dans votre pipeline, vous utiliserez un ensemble de données contenant des détails sur les patients diabétiques. Exécutez la cellule ci-dessous pour créer ce jeu de données (si vous l'avez créé précédemment, le code trouvera la version existante)</p>
+<h2 id="Prepare-data">Prepare data<a class="anchor-link" href="#Prepare-data">&#182;</a></h2><p>In your pipeline, you'll use a dataset containing details of diabetes patients. Run the cell below to create this dataset (if you created it previously, the code will find the existing version)</p>
 
 </div>
 </div>
@@ -14710,8 +14698,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Cr%C3%A9er-des-scripts-pour-les-%C3%A9tapes-du-pipeline">Cr&#233;er des scripts pour les &#233;tapes du pipeline<a class="anchor-link" href="#Cr%C3%A9er-des-scripts-pour-les-%C3%A9tapes-du-pipeline">&#182;</a></h2><p>Les pipelines consistent en une ou plusieurs <em>étapes</em>, qui peuvent être des scripts Python, ou des étapes spécialisées comme une étape de transfert de données qui copie les données d'un emplacement à un autre. Chaque étape peut s'exécuter dans son propre contexte de calcul. Dans cet exercice, vous allez créer un pipeline simple contenant deux étapes de script Python : une pour prétraiter certaines données d'entraînement et une autre pour utiliser les données prétraitées pour entraîner et enregistrer un modèle.</p>
-<p>Commençons par créer un dossier pour les fichiers de script que nous utiliserons dans les étapes du pipeline.</p>
+<h2 id="Create-scripts-for-pipeline-steps">Create scripts for pipeline steps<a class="anchor-link" href="#Create-scripts-for-pipeline-steps">&#182;</a></h2><p>Pipelines consist of one or more <em>steps</em>, which can be Python scripts, or specialized steps like a data transfer step that copies data from one location to another. Each step can run in its own compute context. In this exercise, you'll build a simple pipeline that contains two Python script steps: one to pre-process some training data, and another to use the pre-processed data to train and register a model.</p>
+<p>First, let's create a folder for the script files we'll use in the pipeline steps.</p>
 
 </div>
 </div>
@@ -14744,8 +14732,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Créons maintenant le premier script, qui lira les données de l'ensemble de données sur le diabète et appliquera un prétraitement simple pour supprimer toutes les lignes avec des données manquantes et normaliser les caractéristiques numériques afin qu'elles soient sur une échelle similaire.</p>
-<p>Le script inclut un argument nommé <strong>--prepped-data</strong>, qui fait référence au dossier dans lequel les données résultantes doivent être enregistrées.</p>
+<p>Now let's create the first script, which will read data from the diabetes dataset and apply some simple pre-processing to remove any rows with missing data and normalize the numeric features so they're on a similar scale.</p>
+<p>The script includes a argument named <strong>--prepped-data</strong>, which references the folder where the resulting data should be saved.</p>
 
 </div>
 </div>
@@ -14818,7 +14806,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Vous pouvez maintenant créer le script pour la deuxième étape, qui entraînera un modèle. Le script inclut un argument nommé <strong>--training-data</strong>, qui fait référence à l'emplacement où les données préparées ont été enregistrées à l'étape précédente.</p>
+<p>Now you can create the script for the second step, which will train a model. The script includes a argument named <strong>--training-data</strong>, which references the location where the prepared data was saved by the previous step.</p>
 
 </div>
 </div>
@@ -14924,10 +14912,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Pr%C3%A9parer-un-environnement-de-calcul-pour-les-%C3%A9tapes-du-pipeline">Pr&#233;parer un environnement de calcul pour les &#233;tapes du pipeline<a class="anchor-link" href="#Pr%C3%A9parer-un-environnement-de-calcul-pour-les-%C3%A9tapes-du-pipeline">&#182;</a></h2><p>Dans cet exercice, vous utiliserez le même calcul pour les deux étapes, mais il est important de réaliser que chaque étape est exécutée indépendamment ; vous pouvez donc spécifier différents contextes de calcul pour chaque étape, le cas échéant.</p>
-<p>Commencez par obtenir la cible de calcul que vous avez créée dans un atelier précédent (si elle n'existe pas, elle sera créée).</p>
+<h2 id="Prepare-a-compute-environment-for-the-pipeline-steps">Prepare a compute environment for the pipeline steps<a class="anchor-link" href="#Prepare-a-compute-environment-for-the-pipeline-steps">&#182;</a></h2><p>In this exercise, you'll use the same compute for both steps, but it's important to realize that each step is run independently; so you could specify different compute contexts for each step if appropriate.</p>
+<p>First, get the compute target you created in a previous lab (if it doesn't exist, it will be created).</p>
 <blockquote>
-<p><strong>Important</strong> : Remplacez <em>your-compute-cluster</em> par le nom de votre cluster de calcul dans le code ci-dessous avant de l'exécuter ! Les noms de cluster doivent être des noms globalement uniques de 2 à 16 caractères. Les caractères valides sont les lettres, les chiffres et le caractère -.</p>
+<p><strong>Important</strong>: Change <em>your-compute-cluster</em> to the name of your compute cluster in the code below before running it! Cluster names must be globally unique names between 2 to 16 characters in length. Valid characters are letters, digits, and the - character.</p>
 </blockquote>
 
 </div>
@@ -14974,9 +14962,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <blockquote>
-<p><strong>Remarque</strong> : Les instances de calcul et les clusters sont basés sur des images de machines virtuelles Azure standard. Pour cet exercice, l'image <em>Standard_DS11_v2</em> est recommandée pour atteindre l'équilibre optimal entre coût et performances. Si votre abonnement a un quota qui n'inclut pas cette image, choisissez une autre image ; mais gardez à l'esprit qu'une image plus grande peut entraîner un coût plus élevé et qu'une image plus petite peut ne pas être suffisante pour accomplir les tâches. Vous pouvez également demander à votre administrateur Azure d'étendre votre quota.</p>
+<p><strong>Note</strong>: Compute instances and clusters are based on standard Azure virtual machine images. For this exercise, the <em>Standard_DS11_v2</em> image is recommended to achieve the optimal balance of cost and performance. If your subscription has a quota that does not include this image, choose an alternative image; but bear in mind that a larger image may incur higher cost and a smaller image may not be sufficient to complete the tasks. Alternatively, ask your Azure administrator to extend your quota.</p>
 </blockquote>
-<p>Le calcul nécessitera un environnement Python avec les dépendances de package nécessaires installées.</p>
+<p>The compute will require a Python environment with the necessary package dependencies installed.</p>
 
 </div>
 </div>
@@ -15015,7 +15003,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Maintenant que vous disposez d'un fichier de configuration Conda, vous pouvez créer un environnement et l'utiliser dans la configuration d'exécution du pipeline.</p>
+<p>Now that you have a Conda configuration file, you can create an environment and use it in the run configuration for the pipeline.</p>
 
 </div>
 </div>
@@ -15062,8 +15050,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Cr%C3%A9er-et-ex%C3%A9cuter-un-pipeline">Cr&#233;er et ex&#233;cuter un pipeline<a class="anchor-link" href="#Cr%C3%A9er-et-ex%C3%A9cuter-un-pipeline">&#182;</a></h2><p>Vous êtes maintenant prêt à créer et à exécuter un pipeline.</p>
-<p>Vous devez d'abord définir les étapes du pipeline et toutes les références de données qui doivent être transmises entre elles. Dans ce cas, la première étape doit écrire les données préparées dans un dossier qui peut être lu par la deuxième étape. Étant donné que les étapes seront exécutées sur un calcul distant (et en fait, chacune pourrait être exécutée sur un calcul différent), le chemin du dossier doit être transmis en tant que référence de données à un emplacement dans un magasin de données dans l'espace de travail. L'objet <strong>OutputFileDatasetConfig</strong> est un type spécial de référence de données qui est utilisé pour les emplacements de stockage provisoires qui peuvent être transmis entre les étapes du pipeline. Vous allez donc en créer un et l'utiliser comme sortie pour la première étape et comme entrée pour le deuxième étape. Notez que vous devez le transmettre en tant qu'argument de script afin que votre code puisse accéder à l'emplacement du magasin de données référencé par la référence de données.</p>
+<h2 id="Create-and-run-a-pipeline">Create and run a pipeline<a class="anchor-link" href="#Create-and-run-a-pipeline">&#182;</a></h2><p>Now you're ready to create and run a pipeline.</p>
+<p>First you need to define the steps for the pipeline, and any data references that need to be passed between them. In this case, the first step must write the prepared data to a folder that can be read from by the second step. Since the steps will be run on remote compute (and in fact, could each be run on different compute), the folder path must be passed as a data reference to a location in a datastore within the workspace. The <strong>OutputFileDatasetConfig</strong> object is a special kind of data reference that is used for interim storage locations that can be passed between pipeline steps, so you'll create one and use at as the output for the first step and the input for the second step. Note that you need to pass it as a script argument so your code can access the datastore location referenced by the data reference.</p>
 
 </div>
 </div>
@@ -15119,7 +15107,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>OK, vous êtes prêt à créer le pipeline à partir des étapes que vous avez définies et à l'exécuter en tant qu'expérience.</p>
+<p>OK, you're ready build the pipeline from the steps you've defined and run it as an experiment.</p>
 
 </div>
 </div>
@@ -15161,8 +15149,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Une représentation graphique de l'expérience de pipeline s'affichera dans le widget lors de son exécution. Gardez un œil sur l'indicateur du noyau en haut à droite de la page, lorsqu'il passe de <strong>⚫</strong> à <strong>◯</strong>, le code a fini de s'exécuter. Vous pouvez également surveiller les exécutions de pipeline sur la page <strong>Experiments</strong> dans <a href="https://ml.azure.com">Azure Machine Learning studio</a>.</p>
-<p>Lorsque le pipeline est terminé, vous pouvez examiner les métriques enregistrées par ses exécutions enfants.</p>
+<p>A graphical representation of the pipeline experiment will be displayed in the widget as it runs. Keep an eye on the kernel indicator at the top right of the page, when it turns from <strong>⚫</strong> to <strong>◯</strong>, the code has finished running. You can also monitor pipeline runs in the <strong>Experiments</strong> page in <a href="https://ml.azure.com">Azure Machine Learning studio</a>.</p>
+<p>When the pipeline has finished, you can examine the metrics recorded by it's child runs.</p>
 
 </div>
 </div>
@@ -15194,7 +15182,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>En supposant que le pipeline a réussi, un nouveau modèle doit être enregistré avec une balise <em>Training context</em> indiquant qu'il a été formé dans un pipeline. Exécutez le code suivant pour vérifier cela.</p>
+<p>Assuming the pipeline was successful, a new model should be registered with a <em>Training context</em> tag indicating it was trained in a pipeline. Run the following code to verify this.</p>
 
 </div>
 </div>
@@ -15232,7 +15220,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Publier-le-pipeline">Publier le pipeline<a class="anchor-link" href="#Publier-le-pipeline">&#182;</a></h2><p>Après avoir créé et testé un pipeline, vous pouvez le publier en tant que service REST.</p>
+<h2 id="Publish-the-pipeline">Publish the pipeline<a class="anchor-link" href="#Publish-the-pipeline">&#182;</a></h2><p>After you've created and tested a pipeline, you can publish it as a REST service.</p>
 
 </div>
 </div>
@@ -15264,7 +15252,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notez que le pipeline publié a un point de terminaison, que vous pouvez voir sur la page <strong>Points de terminaison</strong> (sur l'onglet <strong>Points de terminaison du pipeline</strong>) dans <a href="https://ml.azure.com">Azure Machine Learning studio</a> . Vous pouvez également trouver son URI en tant que propriété de l'objet de pipeline publié :</p>
+<p>Note that the published pipeline has an endpoint, which you can see in the <strong>Endpoints</strong> page (on the <strong>Pipeline Endpoints</strong> tab) in <a href="https://ml.azure.com">Azure Machine Learning studio</a>. You can also find its URI as a property of the published pipeline object:</p>
 
 </div>
 </div>
@@ -15293,7 +15281,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Appeler-le-point-de-terminaison-du-pipeline">Appeler le point de terminaison du pipeline<a class="anchor-link" href="#Appeler-le-point-de-terminaison-du-pipeline">&#182;</a></h2><p>Pour utiliser le point de terminaison, les applications clientes doivent effectuer un appel REST via HTTP. Cette demande doit être authentifiée, donc un en-tête d'autorisation est requis. Une application réelle nécessiterait un principal de service avec lequel s'authentifier, mais pour le tester, nous utiliserons l'en-tête d'autorisation de votre connexion actuelle à votre espace de travail Azure, que vous pouvez obtenir à l'aide du code suivant :</p>
+<h2 id="Call-the-pipeline-endpoint">Call the pipeline endpoint<a class="anchor-link" href="#Call-the-pipeline-endpoint">&#182;</a></h2><p>To use the endpoint, client applications need to make a REST call over HTTP. This request must be authenticated, so an authorization header is required. A real application would require a service principal with which to be authenticated, but to test this out, we'll use the authorization header from your current connection to your Azure workspace, which you can get using the following code:</p>
 
 </div>
 </div>
@@ -15325,7 +15313,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Nous sommes maintenant prêts à appeler l'interface REST. Le pipeline s'exécute de manière asynchrone, nous récupérons donc un identifiant, que nous pouvons utiliser pour suivre l'expérience du pipeline pendant son exécution :</p>
+<p>Now we're ready to call the REST interface. The pipeline runs asynchronously, so we'll get an identifier back, which we can use to track the pipeline experiment as it runs:</p>
 
 </div>
 </div>
@@ -15362,9 +15350,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Puisque vous avez l'ID d'exécution, vous pouvez l'utiliser pour attendre la fin de l'exécution.</p>
+<p>Since you have the run ID, you can use it to wait for the run to complete.</p>
 <blockquote>
-<p><strong>Remarque</strong> : Le pipeline devrait se terminer rapidement, car chaque étape a été configurée pour permettre la réutilisation de la sortie. Cela a été fait principalement pour des raisons de commodité et pour gagner du temps dans ce cours. En réalité, vous voudriez probablement que la première étape s'exécute à chaque fois au cas où les données auraient changé, et déclencher les étapes suivantes uniquement si la sortie de la première étape change.</p>
+<p><strong>Note</strong>: The pipeline should complete quickly, because each step was configured to allow output reuse. This was done primarily for convenience and to save time in this course. In reality, you'd likely want the first step to run every time in case the data has changed, and trigger the subsequent steps only if the output from step one changes.</p>
 </blockquote>
 
 </div>
@@ -15396,7 +15384,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Planifier-le-pipeline">Planifier le pipeline<a class="anchor-link" href="#Planifier-le-pipeline">&#182;</a></h2><p>Supposons que la clinique pour les patients diabétiques collecte de nouvelles données chaque semaine et les ajoute à l'ensemble de données. Vous pouvez exécuter le pipeline chaque semaine pour recycler le modèle avec les nouvelles données.</p>
+<h2 id="Schedule-the-Pipeline">Schedule the Pipeline<a class="anchor-link" href="#Schedule-the-Pipeline">&#182;</a></h2><p>Suppose the clinic for the diabetes patients collects new data each week, and adds it to the dataset. You could run the pipeline every week to retrain the model with the new data.</p>
 
 </div>
 </div>
@@ -15433,7 +15421,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Vous pouvez récupérer les plannings définis dans l'espace de travail comme ceci :</p>
+<p>You can retrieve the schedules that are defined in the workspace like this:</p>
 
 </div>
 </div>
@@ -15462,7 +15450,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Vous pouvez vérifier la dernière exécution comme ceci :</p>
+<p>You can check the latest run like this:</p>
 
 </div>
 </div>
@@ -15493,8 +15481,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ceci est un exemple simple, conçu pour démontrer le principe. En réalité, vous pouvez créer une logique plus sophistiquée dans les étapes du pipeline - par exemple, évaluer le modèle par rapport à certaines données de test pour calculer une métrique de performance comme l'AUC ou la précision, comparer la métrique à celle de toutes les versions précédemment enregistrées du modèle, et seulement enregistrer le nouveau modèle s'il fonctionne mieux.</p>
-<p>Vous pouvez utiliser <a href="https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.vss-services-azureml">l'extension Azure Machine Learning pour Azure DevOps</a> pour combiner les pipelines Azure ML avec les pipelines Azure DevOps ( oui, c'est * déroutant * qu'ils portent le même nom !) et intégrez le recyclage du modèle dans un processus d' * intégration continue/déploiement continu (CI/CD) <em>. Par exemple, vous pouvez utiliser un pipeline Azure DevOps </em>build* pour déclencher un pipeline Azure ML qui entraîne et enregistre un modèle, et lorsque le modèle est enregistré, il peut déclencher un pipeline Azure Devops <em>release</em> qui déploie le modèle en tant que service Web, ainsi que l'application ou le service qui utilise le modèle.</p>
+<p>This is a simple example, designed to demonstrate the principle. In reality, you could build more sophisticated logic into the pipeline steps - for example, evaluating the model against some test data to calculate a performance metric like AUC or accuracy, comparing the metric to that of any previously registered versions of the model, and only registering the new model if it performs better.</p>
+<p>You can use the <a href="https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.vss-services-azureml">Azure Machine Learning extension for Azure DevOps</a> to combine Azure ML pipelines with Azure DevOps pipelines (yes, it <em>is</em> confusing that they have the same name!) and integrate model retraining into a <em>continuous integration/continuous deployment (CI/CD)</em> process. For example you could use an Azure DevOps <em>build</em> pipeline to trigger an Azure ML pipeline that trains and registers a model, and when the model is registered it could trigger an Azure Devops <em>release</em> pipeline that deploys the model as a web service, along with the application or service that consumes the model.</p>
 
 </div>
 </div>
