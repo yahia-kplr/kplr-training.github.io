@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>6_Statistial_Experiments_and_Significance_Testing</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -15323,7 +15324,7 @@ variation.</p>
 <div class=" highlight hl-python"><pre><span></span><span class="n">survivors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">23739</span> <span class="o">-</span> <span class="mi">200</span><span class="p">],</span> <span class="p">[</span><span class="mi">182</span><span class="p">,</span> <span class="mi">22588</span> <span class="o">-</span> <span class="mi">182</span><span class="p">]])</span>
 <span class="n">chi2</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">survivors</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value for single sided test: </span><span class="si">{</span><span class="n">p_value</span> <span class="o">/</span> <span class="mi">2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value for single sided test: </span><span class="si">{</span><span class="n">p_value</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15437,7 +15438,7 @@ est proche de la valeur de p obtenue à partir du test de permutation.</p>
 <div class=" highlight hl-python"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">session_times</span><span class="p">[</span><span class="n">session_times</span><span class="o">.</span><span class="n">Page</span> <span class="o">==</span> <span class="s1">&#39;Page A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span> 
                       <span class="n">session_times</span><span class="p">[</span><span class="n">session_times</span><span class="o">.</span><span class="n">Page</span> <span class="o">==</span> <span class="s1">&#39;Page B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span>
                       <span class="n">equal_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value for single sided test: </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">pvalue</span> <span class="o">/</span> <span class="mi">2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value for single sided test: </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">pvalue</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
