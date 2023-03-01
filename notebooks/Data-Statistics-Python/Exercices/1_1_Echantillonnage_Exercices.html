@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/kplr-training/Statistics-With-Python/blob/main/Exercices/4-Distribution_de_Probabilit%C3%A9s_avec_Python%E2%80%8B.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/yahia-kplr/Statistics-With-Python_fr/blob/main/Exercices/1_1_Echantillonnage_Exercices.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
@@ -14609,7 +14609,30 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Importing-Libraries"><strong>Importing Libraries</strong><a class="anchor-link" href="#Importing-Libraries">&#182;</a></h1>
+<h1 id="%C3%89chantillonnage">&#201;chantillonnage<a class="anchor-link" href="#%C3%89chantillonnage">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Dans le chapitre et la conférence, nous avons discuté de certains problèmes fondamentaux de l'échantillonnage. Dans ce cahier, vous explorerez quelques méthodes python pratiques pour l'échantillonnage et examinerez les implications de l'échantillonnage sur ce que vous comprenez d'un groupe cible (c'est-à-dire ce que vous pouvez généraliser).</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Importation-et-utilisation-de-fonctions-existantes">Importation et utilisation de fonctions existantes<a class="anchor-link" href="#Importation-et-utilisation-de-fonctions-existantes">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14621,9 +14644,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sbn</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">npr</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </pre></div>
 
      </div>
@@ -14638,7 +14662,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Generating-Random-sample-data-in-Normal-Distribustion-form"><strong>Generating Random sample data in Normal Distribustion form</strong><a class="anchor-link" href="#Generating-Random-sample-data-in-Normal-Distribustion-form">&#182;</a></h1>
+<h2 id="Probl%C3%A8me-0-:-Amor%C3%A7age-d'un-g%C3%A9n%C3%A9rateur-de-nombres-al%C3%A9atoires">Probl&#232;me 0 : Amor&#231;age d'un g&#233;n&#233;rateur de nombres al&#233;atoires<a class="anchor-link" href="#Probl%C3%A8me-0-:-Amor%C3%A7age-d'un-g%C3%A9n%C3%A9rateur-de-nombres-al%C3%A9atoires">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14649,7 +14673,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://user-images.githubusercontent.com/123752166/222191747-7a30052a-c40a-4c9f-9d59-8eccce939ca6.png" alt="image.png" /></p>
+<p>Lorsque nous utilisons l'ordinateur pour jouer avec des nombres aléatoires (ou des échantillons aléatoires), nous n'utilisons pas réellement de nombres aléatoires. D'une manière générale, votre ordinateur est une machine déterministe, il est donc incapable de créer des nombres vraiment aléatoires. Au lieu de cela, les nombres que votre ordinateur vous donne sont appelés pseudo-aléatoires car ils possèdent de nombreuses propriétés que nous attendons des nombres aléatoires, mais ne sont pas exactement et entièrement aléatoires.</p>
+<p>Chaque fois que nous utilisons des nombres aléatoires dans un script, une simulation ou une analyse, il est important de &quot;semer&quot; le générateur de nombres aléatoires. Cela a initialisé la fonction de générateur de nombres aléatoires à un &quot;état&quot; particulier, ce qui rend le nombre dans le script aléatoire mais répétable.</p>
+<p>Essayons cela. Essayez d'abord d'exécuter la cellule suivante et de voir quelle est la sortie. Essayez de l'exécuter plusieurs fois et voyez comment les chiffres changent.</p>
 
 </div>
 </div>
@@ -14662,13 +14688,60 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-python"><pre><span></span><span class="c1">#TO_DO</span>
-<span class="c1">#try to generate a random sample data of 100000 size in normal distribution form with np.random.normal </span>
-<span class="c1">#fill_here</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1">#to plot histogram without axises</span>
-<span class="n">sbn</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span>
-<span class="c1"># sbn.distplot(sample_data,kde=False)   #Note:- kde=False for remove Normal Dist line</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">npr</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>array([4, 1, 3, 6, 5, 3, 9, 6, 9, 1])</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Exécutez maintenant cette cellule :</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">npr</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">npr</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">npr</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14687,56 +14760,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,https://user-images.githubusercontent.com/123752166/222191747-7a30052a-c40a-4c9f-9d59-8eccce939ca6.png"
-class="
-jp-needs-light-background
-"
->
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/usr/local/lib/python3.8/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
-  warnings.warn(msg, FutureWarning)
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[9 4 0 1 9 0 1 8 9 0]
+[8 6 4 3 0 4 6 8 1 8]
 </pre>
 </div>
 </div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f2163d9bbe0&gt;</pre>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,https://user-images.githubusercontent.com/123752166/222192409-4e73ef3a-caaf-45e6-8d5b-7ff739eb91c4.png"
-class="
-jp-needs-light-background
-"
->
-</div>
-
-</div>
 
 </div>
 
@@ -14749,18 +14778,8 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Apply-Central-limit-Theorem-on-data"><strong>Apply Central limit Theorem on data</strong><a class="anchor-link" href="#Apply-Central-limit-Theorem-on-data">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://user-images.githubusercontent.com/123752166/222192517-3a5d936c-be74-4247-a613-575ebf9fa550.png" alt="image.png" /></p>
+<p>Encore une fois, essayez de répéter l'exécution de la cellule encore et encore. Qu'observez-vous ?</p>
+<p>Essayez de redémarrer le noyau et exécutez à nouveau la cellule. Que remarquez-vous ? Comparez avec les autres personnes de votre groupe. Changez également l'argument en <code>npr.seed()</code> et voyez ce qui se passe.</p>
 
 </div>
 </div>
@@ -14772,26 +14791,46 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li><p>It is the sampling distribution of the sampling means approaches a normal distribution as the sample size gets larger, no matter what the shape of the data distribution.</p>
-</li>
-<li><p>An essential component of the Central Limit Theorem is the average of sample means will be the population mean.</p>
-</li>
-<li><p>Similarly, if you find the average of all of the standard deviations in your sample, you will find the actual standard deviation for your population.</p>
-<p>μ_sample = μ               # mean
-  σ_sample = σ / sqrt(n)     # standard deviation
-  σ_sample ^2 = σ^2 / n      # variance</p>
-</li>
-</ul>
-<p>Where,</p>
-<ul>
-<li>(n&gt;= 30) and</li>
-<li>μ = Population mean,</li>
-<li>σ = Population standard deviation,</li>
-<li>μ_sample = Sample mean,</li>
-<li>σ_sample = Sample standard deviation,</li>
-<li>n = Sample size</li>
-</ul>
+<h4 id="R%C3%A9ponse-0-ici%C2%A0:">R&#233;ponse 0 ici&#160;:<a class="anchor-link" href="#R%C3%A9ponse-0-ici%C2%A0:">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Enter solution here</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>En résumé : placez toujours le générateur de nombres aléatoires au début de tout script utilisant des nombres aléatoires afin que votre code soit plus reproductible.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Probl%C3%A8me-1-:-%C3%89chantillonnage-%C3%A0-partir-d'une-population-finie">Probl&#232;me 1 : &#201;chantillonnage &#224; partir d'une population finie<a class="anchor-link" href="#Probl%C3%A8me-1-:-%C3%89chantillonnage-%C3%A0-partir-d'une-population-finie">&#182;</a></h2><p>Imaginez que je crée une liste avec 100 valeurs déterminées au hasard comme ci-dessous. En utilisant le Web, recherchez la fonction numpy random <code>choice()</code>. Utilisez-le pour générer un échantillon aléatoire de taille 10 à partir de ces données. Faites-le deux fois, un avec remplacement et une fois sans remplacement.</p>
 
 </div>
 </div>
@@ -14804,18 +14843,12 @@ jp-needs-light-background
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">apply_CLT</span><span class="p">(</span><span class="n">sample_data</span><span class="p">,</span><span class="n">sample_size</span><span class="p">,</span><span class="n">total_samples</span><span class="p">):</span>
-  <span class="n">sample_mean</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total_samples</span><span class="p">):</span>  <span class="c1">#iterating for total no of samples for choosing samples and their mean</span>
-    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">sample_data</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">sample_size</span><span class="p">)</span>    <span class="c1">#Note:- replace=False for with-out replacement</span>
-    <span class="c1">#to_do</span>
-    <span class="c1">#Finding mean of random chose samples using numpy</span>
-    <span class="c1">#fill_here </span>
-    <span class="c1">#to_do</span>
-    <span class="c1">#add mean in sample_mean with append()</span>
-    <span class="c1">#fill_here    </span>
-     
-  <span class="k">return</span> <span class="n">sample_mean</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">75</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span>
+       <span class="mi">87</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span>
+       <span class="mi">81</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span>
+        <span class="mi">7</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span>
+       <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span>
+       <span class="mi">39</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -14830,10 +14863,77 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Normal-Dist-sample-data"><strong>Normal Dist sample data</strong><a class="anchor-link" href="#Normal-Dist-sample-data">&#182;</a></h1>
+<h4 id="R%C3%A9ponse-1-ici%C2%A0:">R&#233;ponse 1 ici&#160;:<a class="anchor-link" href="#R%C3%A9ponse-1-ici%C2%A0:">&#182;</a></h4>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Enter solution here</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Probl%C3%A8me-2%C2%A0:-%C3%89chantillonnage-%C3%A0-partir-d'un-bloc-de-donn%C3%A9es">Probl&#232;me 2&#160;: &#201;chantillonnage &#224; partir d'un bloc de donn&#233;es<a class="anchor-link" href="#Probl%C3%A8me-2%C2%A0:-%C3%89chantillonnage-%C3%A0-partir-d'un-bloc-de-donn%C3%A9es">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Parfois, ce qui nous intéresse, c'est l'échantillonnage à partir d'une base de données pandas plutôt qu'une liste ou un tableau numpy. Pourquoi pourrions-nous vouloir échantillonner à partir d'un ensemble de données ? L'une consiste à sélectionner au hasard un sous-ensemble de tests de formation si nous réalisons des projets d'apprentissage automatique sur les données (nous en reparlerons plus tard). Une autre est s'il y a deux nombreux enregistrements à analyser, il est donc logique de sélectionner au hasard un sous-ensemble et de les analyser. Une autre consiste à échantillonner à plusieurs reprises à partir d'un ensemble de données pour appliquer une méthode statistique appelée &quot;boostrapping&quot; (<a href="https://en.wikipedia.org/wiki/Bootstrapping_(statistics">https://en.wikipedia.org/wiki/Bootstrapping_(statistics</a>))</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Ce code charge un exemple de jeu de données pandas de différents pingouins.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">penguins_df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;penguins&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14842,11 +14942,125 @@ jp-needs-light-background
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-python"><pre><span></span><span class="c1">#TO_DO</span>
-<span class="c1">#try to generate a random sample data of 100 size in normal distribution form with np.random.normal </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">penguins_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
 
-<span class="n">sample_data</span> <span class="o">=</span> <span class="c1">#fill_here</span>
-<span class="n">sbn</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span>
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.1</td>
+      <td>18.7</td>
+      <td>181.0</td>
+      <td>3750.0</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.5</td>
+      <td>17.4</td>
+      <td>186.0</td>
+      <td>3800.0</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>40.3</td>
+      <td>18.0</td>
+      <td>195.0</td>
+      <td>3250.0</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>36.7</td>
+      <td>19.3</td>
+      <td>193.0</td>
+      <td>3450.0</td>
+      <td>Female</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">penguins_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14865,106 +15079,23 @@ jp-needs-light-background
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/usr/local/lib/python3.8/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
-  warnings.warn(msg, FutureWarning)
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 344 entries, 0 to 343
+Data columns (total 7 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   species            344 non-null    object 
+ 1   island             344 non-null    object 
+ 2   bill_length_mm     342 non-null    float64
+ 3   bill_depth_mm      342 non-null    float64
+ 4   flipper_length_mm  342 non-null    float64
+ 5   body_mass_g        342 non-null    float64
+ 6   sex                333 non-null    object 
+dtypes: float64(4), object(3)
+memory usage: 18.9+ KB
 </pre>
 </div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f215ef87130&gt;</pre>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,https://user-images.githubusercontent.com/123752166/222193007-4d2c1e44-5275-43c6-93d8-42afd219fa3f.png"
-class="
-jp-needs-light-background
-"
->
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-python"><pre><span></span><span class="c1">#Appling CLT on sample data. Funtion = apply_CLT(sample_data,sample_size,total_samples)</span>
-<span class="n">sbn</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span> <span class="n">apply_CLT</span><span class="p">(</span><span class="n">sample_data</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/usr/local/lib/python3.8/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
-  warnings.warn(msg, FutureWarning)
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f215ef003d0&gt;</pre>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,https://user-images.githubusercontent.com/123752166/222193132-c50fbbf9-0578-4af7-9978-ac65d4988e02.png"
-class="
-jp-needs-light-background
-"
->
-</div>
-
 </div>
 
 </div>
@@ -14978,7 +15109,8 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Uniform-Dist-sample-data"><strong>Uniform Dist sample data</strong><a class="anchor-link" href="#Uniform-Dist-sample-data">&#182;</a></h1>
+<p>Recherchez la méthode <code>simple()</code> des pandas et échantillonnage au hasard 20 pingouins à partir de la base de données.</p>
+
 </div>
 </div>
 </div>
@@ -14989,12 +15121,11 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://user-images.githubusercontent.com/123752166/222193243-8e6c387a-1c02-4ffc-9999-46a25ba35eb8.png" alt="image.png" /></p>
-
+<h4 id="R%C3%A9ponse-2a-ici%C2%A0:">R&#233;ponse 2a ici&#160;:<a class="anchor-link" href="#R%C3%A9ponse-2a-ici%C2%A0:">&#182;</a></h4>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15002,10 +15133,7 @@ jp-needs-light-background
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-python"><pre><span></span><span class="c1">#TO_DO</span>
-<span class="c1">#try to generate a random sample data of 10000 size in normal distribution form with np.random.normal </span>
-<span class="n">sample_data</span><span class="o">=</span><span class="c1">#fill_here</span>
-<span class="n">sbn</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Enter solution here</span>
 </pre></div>
 
      </div>
@@ -15013,57 +15141,30 @@ jp-needs-light-background
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Maintenant, pour la partie b de cette question, dans une boucle for, créez 100 fois un échantillon aléatoire de la base de données et calculez la masse corporelle moyenne des pingouins de votre échantillon. Ajoutez toutes ces valeurs à une liste, puis tracez un histogramme de ces valeurs. Comparez-le à la moyenne de l'ensemble de données contenant tous les pingouins.</p>
 
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/usr/local/lib/python3.8/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
-  warnings.warn(msg, FutureWarning)
-</pre>
 </div>
 </div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f2163dd1be0&gt;</pre>
 </div>
-
 </div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,https://user-images.githubusercontent.com/123752166/222193361-829c43cb-22b0-4624-adc7-1cd9c9cbb4ad.png"
-class="
-jp-needs-light-background
-"
->
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="R%C3%A9ponse-2b-ici%C2%A0:">R&#233;ponse 2b ici&#160;:<a class="anchor-link" href="#R%C3%A9ponse-2b-ici%C2%A0:">&#182;</a></h4>
 </div>
-
 </div>
-
 </div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15071,8 +15172,7 @@ jp-needs-light-background
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-python"><pre><span></span><span class="c1">#Appling CLT on sample data. Funtion = apply_CLT(sample_data,sample_size,total_samples)</span>
-<span class="n">sbn</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span> <span class="n">apply_CLT</span><span class="p">(</span><span class="n">sample_data</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="p">)</span>  <span class="c1">#(30 0 and 100 0 0 0)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Enter solution here</span>
 </pre></div>
 
      </div>
@@ -15080,54 +15180,72 @@ jp-needs-light-background
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/usr/local/lib/python3.8/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
-  warnings.warn(msg, FutureWarning)
-</pre>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Probl%C3%A8me-3%C2%A0:-%C3%89chantillonnage-stratifi%C3%A9">Probl&#232;me 3&#160;: &#201;chantillonnage stratifi&#233;<a class="anchor-link" href="#Probl%C3%A8me-3%C2%A0:-%C3%89chantillonnage-stratifi%C3%A9">&#182;</a></h2>
 </div>
 </div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f215eea7fa0&gt;</pre>
 </div>
-
 </div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,https://user-images.githubusercontent.com/123752166/222193519-2775e611-ddc9-4d9a-8244-b0710dc18beb.png"
-class="
-jp-needs-light-background
-"
->
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Un problème avec les échantillons aléatoires simples que nous avons constitués de manchots est que dans chaque échantillon, nous pourrions exclure certains groupes importants de données. Par exemple, si nous n'avons échantillonné que 10 manchots, peut-être qu'ils sont tous des mâles. Si nous voulions être plus équitables, assurez-vous que nos échantillons étaient <em>représentatifs</em> des différences entre les sexes, alors nous voudrions peut-être échantillonner à partir des sous-populations. C'est ce qu'on appelle &quot;l'échantillonnage stratifié&quot;.</p>
+<p>Veuillez lire cet exemple de page Web : <a href="https://www.statology.org/stratified-sampling-pandas/">https://www.statology.org/stratified-sampling-pandas/</a>
+sur un échantillonnage stratifié et adapter le code pour générer un échantillon aléatoire de 10 manchots qui est stratifié de sorte qu'il y ait 5 exemples mâles et 5 femelles dans l'échantillon</p>
 
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Probl%C3%A8me%C2%A03%C2%A0:-R%C3%A9pondez-ici">Probl&#232;me&#160;3&#160;: R&#233;pondez ici<a class="anchor-link" href="#Probl%C3%A8me%C2%A03%C2%A0:-R%C3%A9pondez-ici">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Enter solution here</span>
+</pre></div>
 
+     </div>
+</div>
+</div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
 </div>
