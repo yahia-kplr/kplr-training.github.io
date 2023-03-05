@@ -1,0 +1,68 @@
+<ul>
+<li>Nous allons a présent charger de nouvelles données,</li>
+<li>prenez le temps de lire ATTENTIVEMENT le contenu du nouveau fichier json_data</li>
+<li>En utilisant le code précédemment réalisé, générez un arbre qui en affiche le contenu</li>
+<li>Attention : N'afficher que les Noeuds possédant des sous-classes</li>
+<li>Autrement dit, il ne faut pas inclure les attributs des Produits, mais seulement les catégories de produit.</li>
+<li>Pour ce faire, il ne faut inclure que les noeuds qui ne sont pas terminaux</li>
+<li>
+<p>Les noeuds sans enfants doivent être skippés.</p>
+</li>
+<li>
+<p>voici le Pseudo code pour vous aider à rédiger le code.</p>
+</li>
+</ul>
+<p>```</p>
+<h1>Import des modules nécessaires</h1>
+<p>import json
+from unidecode import unidecode
+from treelib import Tree</p>
+<h1>Fonction pour charger les données JSON depuis un fichier et les convertir en dictionnaire Python</h1>
+<p>la fonction json_dict_from_file() reste inchangée.</p>
+<h1>Fonction pour créer un arbre à partir d'un dictionnaire Python</h1>
+<p>def create_tree_from_dict(json_dict):
+    Créer un nouvel arbre
+    Créer le noeud racine de l'arbre
+    Parcourir récursivement le dictionnaire Python pour créer les noeuds de l'arbre (fonction ci dessous)
+    Retourner l'arbre</p>
+<h1>Fonction récursive pour parcourir un dictionnaire Python et créer des noeuds dans un arbre</h1>
+<p>def recusive_tree_from_json(json_dict, parent_node_id):</p>
+<pre><code>Pour chaque clé (class_name) et valeur (class_attrs) dans le dictionnaire :
+    Créer un nouveau noeud pour la clé courante du dictionnaire (nom de la classe)
+    Ajouter le nouveau noeud en tant que fils du noeud parent
+
+    Si "subclasses" est dans les attributs de la classe en cours (soit : valeur(class_attrs))
+        Appeler récursivement la fonction pour créer les sous-noeuds de ce dictionnaire
+</code></pre>
+<h1>Fonction principale</h1>
+<p>def main():
+    Charger les données JSON depuis un fichier et créer la structure de l'arbre à partir du dictionnaire
+    Créer l'arbre à partir du dictionnaire Python
+    Afficher l'arbre de classes</p>
+<h1>Code principal</h1>
+<p>if <strong>name</strong> == '<strong>main</strong>':
+    Appeler la fonction principale</p>
+<p>```</p>
+<p>Output:</p>
+<p><code>Product Classes Hierarchy
+└── Product
+    └── Biens Consommation
+        ├── Articles Menagers
+        │   ├── Appareils Electromenagers
+        │   │   ├── Lave-linge
+        │   │   ├── Lave-vaisselle
+        │   │   └── Refrigerateur
+        │   ├── Meubles
+        │   │   ├── Canape
+        │   │   ├── Chaise
+        │   │   └── Table
+        │   └── Ustensiles Cuisine
+        │       ├── Batterie Cuisine
+        │       └── Casserole
+        └── Habillement
+            ├── Casquette
+            ├── Chaussures
+            └── Vetements
+                ├── Haut
+                ├── Pantalon
+                └── Robe</code></p>
